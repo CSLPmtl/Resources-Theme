@@ -1,0 +1,26 @@
+// mobile first, people!
+#masthead {
+	position: fixed;
+  top: 0;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  z-index: 100;
+  pointer-events: none;
+	background: $c__brand-white;
+	transition: transform 120ms easeOutQuint; // change for snappier values on desktop, slower on tablet
+	// transform: translate3D(100%, 0, 0);
+}
+
+#site-navigation {
+	background: $c__gnav-background;
+	color: $c__brand-white;
+	position: absolute;
+	top: 0;
+	right: 0;
+	left: 0;
+	font-size: 1em;
+	a {
+		text-decoration: none;
+	}
+}
