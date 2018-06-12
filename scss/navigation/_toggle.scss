@@ -1,0 +1,38 @@
+.menu-toggle {
+	position: relative;
+	pointer-events: all;
+	top: 0;
+	left: 0;
+  display: block;
+  width: 21px;
+  height: 21px;
+  margin: 0;
+  padding: 0;
+  background: 0 0;
+  border: 0;
+  outline: 0;
+  transition: all 0s;
+  span {
+		position: relative;
+		display: block;
+		width: 100%;
+		border-bottom: 2px currentColor solid;
+		transition: transform .2s, width .3s;
+		transform-origin: center center;
+		&:last-child {
+		  width: 100%;
+		}
+	}
+	&:after {
+		content: "";
+		display: block;
+		position: absolute;
+		top: -15px;
+		left: -15px;
+		right: -15px;
+		bottom: -15px;
+		border-radius: 50%;
+		z-index: -1;
+		transition: all .3s;
+	}
+}
