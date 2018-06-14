@@ -19,35 +19,6 @@
 
 }
 
-// contains local nav
-.overview-header {
-
-}
-
-// page nav
-.local-nav {
-	ul {
-		list-style-type: none;
-		padding: 0;
-		margin: .3em 0 0 3em;
-		@include flexbox();
-	}
-
-	.local-nav__item { // li
-		padding: 1em;
-		a {
-			color: inherit;
-			text-decoration: none;
-			font-size: 1.2em;
-			font-family: $font__code;
-		}
-	}
-}
-
-.overview-header.scrolled {
-	background: $c__brand-white;
-	color: $c__brand-teal;
-}
 
 .admin-bar {
 	.custom-logo-link, .overview-header {
