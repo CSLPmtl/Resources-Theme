@@ -5,12 +5,22 @@ h4,
 h5,
 h6 {
   clear: both;
-}
-
-h1 {
-  font-size: 2em;
+  color: $c__text-heading;
+  font-family: $font__head;
+  font-weight: 300;
 }
 
 .entry-title {
   font-size: 3em;
 }
+
+h1 {
+	@include font-size(2);
+  letter-spacing: 2.1px;
+	line-height: 1.3;
+
+	@inlcude media('>tablet') {
+		@include font-size(2.5);
+	}
+}
+

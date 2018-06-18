@@ -1,5 +1,5 @@
 .site-main {
-	padding: 2rem;
+	// padding: 2rem;
 	min-height: 98vh;
 }
 
@@ -8,3 +8,11 @@
 		max-width: 700px;
 	}
 }
+
+@import 'parts/article';
+@import 'parts/footer';
+
+@import 'tool/tool';
+@import 'tool/tool-home';
+
+@import 'singletons/homepage';

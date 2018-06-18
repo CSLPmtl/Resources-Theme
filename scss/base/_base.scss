@@ -41,6 +41,7 @@ html {
 
 body {
 	font-size: 62.5%;
+	background: $c__background-body; /* Fallback for when there is no custom background color defined. */
 }
 
 /*
@@ -58,4 +59,11 @@ body {
 	background-color: #b3d4fc; /* 1 */
 	color: #000000; /* 1 */
 	text-shadow: none;
+}
+
+hr {
+	background-color: $c__background-hr;
+	border: 0;
+	height: 1px;
+	margin-bottom: 1.5em;
 }

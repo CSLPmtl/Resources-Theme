@@ -1,0 +1,150 @@
+// the global homepage, of all the tools
+
+.homepage {
+	.homepage__masthead {
+		height: 100vh;
+		width: 100%;
+		@extend %flexbox;
+		@include flex-wrap(wrap);
+
+		// padding-top: $size__nav-height; // desktop only
+		.homepage__intro {
+			padding: 1.5em;
+			h1 {
+				margin: 0;
+				line-height: 1;
+				margin-bottom: 2rem;
+			}
+			img {
+				width: 150px;
+			}
+			p {
+				max-width: 300px;
+				opacity: 0.8;
+				@include font-size(0.7);
+				padding-bottom: 3rem;
+			}
+			.scroll-hint { // display on desktop only
+				display: none;
+			}
+		}
+
+		.homepage__pt-block { // parent-teacher block
+			@extend %flexbox;
+			@include flex-wrap(wrap);
+			width: 100%;
+
+			.-parent, .-teacher {
+				width: 100%;
+				padding: 1.5em;
+				position: relative;
+				h3 {
+					margin: 0;
+				}
+				p {
+					margin: 0;
+					@include font-size(0.7);
+					color: rgba($c__text-main, 0.6);
+					margin-bottom: 1em;
+				}
+				button {
+					@include media('<tablet') { // make styles desktop first for this particular case
+						position: absolute;
+						right: 0;
+						border-radius: 0;
+						height: 100%;
+						top: 0;
+						// font-weight: 300;
+						// color: black;
+						// background: rgba($c__background-button, 0.9);
+						border: none;
+					}
+				}
+			}
+
+			.-parent {
+				background: #fdfdfd;
+			}
+			.-teacher {
+				background: #f7f7f7;
+			}
+
+			.homepage__tool-selector {
+				margin: 0;
+				list-style-type: none;
+				padding: 0;
+				height: 0; // change with state
+				opacity: 0;
+				li {
+					a {
+						text-decoration: none;
+					}
+				}
+			}
+
+			.homepage__block-inner.open {
+				.homepage__tool-selector {
+					height: auto;
+					opacity: 1;
+				}
+			}
+		}
+	}
+}
+
+@include media('>tablet') {
+	.homepage {
+		.homepage__masthead {
+			.homepage__intro, .homepage__pt-block {
+				width: 50%;
+			}
+
+			.homepage__intro {
+				display: flex;
+			  align-items: center;
+			  justify-content: center;
+
+			  img {
+			  	width: 200px;
+			  }
+
+			  .scroll-hint { // display on desktop only
+					display: block;
+					position: absolute;
+					bottom: 0;
+					text-align: center;
+				}
+			}
+
+			.homepage__pt-block {
+				.-parent, .-teacher {
+					padding: 4em;
+					h3 {
+						margin: 0 0 1rem 0;
+						@include font-size(2);
+					}
+					p {
+						margin: 0 0 4rem 0;
+						@include font-size(0.9);
+					}
+					button {
+						padding: .7rem 3rem .8rem 3rem;
+						margin-bottom: 2rem;
+					}
+				}
+				.homepage__tool-selector {
+					li {
+						display: inline-block;
+						margin: .8rem 0 .9rem 0;
+						a {
+							color: $c__brand-charcoal;
+							border: 1px solid rgba($c__brand-charcoal, 0.1);
+							padding: 9px 1.5rem 11px 1.5rem;
+							border-radius: 40px;
+						}
+					}
+				}
+			}
+		}
+	}
+}

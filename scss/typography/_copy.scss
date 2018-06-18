@@ -60,3 +60,10 @@ big {
 .bold {
   font-weight: bold;
 }
+
+.t__hint {
+  font-wight: light;
+   @include font-size(1);
+   letter-spacing: 0.7px;
+   line-height: 1.2;
+}
