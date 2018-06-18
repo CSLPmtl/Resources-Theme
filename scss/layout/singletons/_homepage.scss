@@ -148,3 +148,23 @@
 		}
 	}
 }
+
+
+// homepage content
+
+.homepage__content {
+	background: $c__brand-grey;
+	padding: 4rem 1em 8rem 1em;
+	@include font-size(.9);
+
+	&.even {
+		background: $c__brand-blue-dark;
+		color: $c__brand-white;
+		font-weight: 300;
+	}
+
+	p {
+		line-height: 1.5;
+		max-width: 800px;
+	}
+}
