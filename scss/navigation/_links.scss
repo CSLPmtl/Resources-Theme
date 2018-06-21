@@ -10,7 +10,7 @@ a {
 		color: $c__link-hover;
 	}
 	&:focus {
-		outline: thin dotted;
+		outline: 2px solid $c__link-hover;
 	}
 	&:hover,
 	&:active {

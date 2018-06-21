@@ -45,12 +45,14 @@ const config = {
 // js compile
 gulp.task( 'js', function (callback) {
 	return gulp.src(paths.js)
+	.pipe(sourcemaps.init())
 	.pipe(concat('all.js'))
 	.pipe(babel({ presets: ['env'] }))
 	.pipe(gulp.dest(paths.jsBuild, { mode: '0777', cwd: process.cwd() + '/theme/' } ))
 	.pipe(rename('all.min.js'))
 	.pipe(uglify())
 	.on('error', logError)
+	.pipe(sourcemaps.write())
 	.pipe(gulp.dest(paths.jsBuild, { mode: '0777', cwd: process.cwd() + '/theme/' }))
 	.pipe(browserSync.reload({stream: true}))
 	.on('end', callback)

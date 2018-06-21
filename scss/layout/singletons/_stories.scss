@@ -1,0 +1,26 @@
+#stories__by-cat {
+	display: flex;
+	flex-wrap: wrap;
+	.category-card {
+		width: 50%;
+		border-radius: 4px;
+		box-shadow: 0px 4px 7px 1px rgba(0,0,0,0.06);
+		margin-top: 1em;
+		h3 {
+			@include font-size(1);
+			margin: 0;
+			padding: 1em 4px 4px 4px;
+			font-style: italic;
+			color: $c__brand-blue;
+		}
+		span {
+			color: #bbb;
+			font-family: $font__code;
+			@include font-size(.41);
+			padding: 0 4px;
+		}
+		a {
+			text-decoration: none;
+		}
+	}
+}

@@ -2,13 +2,16 @@
 	"folders":
 	[
 		{
-			"path": "."
+			"path": "FPPSE"
 		},
 		{
-			"path": "/Applications/MAMP/htdocs/resources/wp-content/plugins"
+			"path": "theme"
 		},
 		{
-			"path": "/Users/mheming/Downloads/Salvage"
+			"path": "scss"
+		},
+		{
+			"path": "src"
 		}
 	]
 }

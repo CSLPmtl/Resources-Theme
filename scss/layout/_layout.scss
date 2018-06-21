@@ -1,6 +1,21 @@
+
+// mobile first you fuck
 .site-main {
-	// padding: 2rem;
 	min-height: 98vh;
+	.hentry {
+		padding: 1.2rem;
+		.entry-title {
+			margin-top: 0;
+			@include font-size(2);
+		}
+		.entry-content {
+			p {
+				@include font-size(.9);
+				opacity: 0.9;
+				// letter-spacing: .9px;
+			}
+		}
+	}
 }
 
 .entry-content {
@@ -16,3 +31,4 @@
 @import 'tool/tool-home';
 
 @import 'singletons/homepage';
+@import 'singletons/stories';
