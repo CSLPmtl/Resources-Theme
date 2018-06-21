@@ -26,3 +26,8 @@ $flexboxgrid-breakpoints:
   md 62em 61rem,
   lg 75em 71rem !default;
 $flexboxgrid-max-width: 1200px !default;
+
+// the global unit of measure
+$u: 22px;
+$baseline: $u; // alias for typographic baseline
+

@@ -1,0 +1,39 @@
+.tool-home {
+	.tool-section {
+		min-height: 80vh;
+		padding: $u;
+		font-size: 0.8em;
+		letter-spacing: .9px;
+		line-height: 1.6;
+		&.blue {
+			background: $c__brand-blue-dark;
+			color: $c__brand-white;
+			font-weight: 300;
+
+			h2 {
+				color: $c__brand-white;
+				font-weight: normal;
+				margin-bottom: $u * 2;
+				margin-top: $u;
+			}
+		}
+	}
+
+	.cta-link {
+		padding: 1em 3em 1em 3em;
+	}
+
+	.tool-home__masthead {
+		display: flex;
+		flex-direction: reverse;
+		flex-wrap: wrap;
+	}
+}
+
+@include media('>tablet') {
+	.tool-home {
+		.tool-section {
+			padding: $u * 3;
+		}
+	}
+}

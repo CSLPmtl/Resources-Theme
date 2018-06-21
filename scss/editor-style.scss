@@ -15,26 +15,8 @@
 	CSLPRES is based on Underscores http://underscores.me/, (C) 2012-2018 Automattic, Inc.
 */
 
-// @import 'util/normalize';
-@import 'util/sanitize';
 
 @import 'variables';
 @import 'mixins/mixins';
 
-@import 'modules/accessibility';
-
-@import 'base/base';
-
 @import 'typography/typography';
-@import 'navigation/navigation';
-
-@import 'elements/elements';
-// @import 'elements/buttons';
-
-@import 'layout/layout'; // provisionally
-
-// @import 'layout/grid';
-// @import 'layout/hero';
-// @import 'layout/page';
-// @import 'layout/singletons';
-// @import 'layout/footer';

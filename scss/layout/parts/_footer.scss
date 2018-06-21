@@ -1,4 +1,23 @@
 #colophon {
 	min-height: 15em;
 	background: $c__brand-charcoal;
+	padding: 1em;
+	.site-footer__inner {
+		display: flex;
+		flex-wrap: wrap;
+	}
+
+	.logos {
+		margin-right: 2rem;
+		a {
+			max-width: 200px;
+			height: 50px;
+			display: inline-block;
+			margin: 1em;
+		}
+		img {
+			height: 100%;
+			width: auto;
+		}
+	}
 }
