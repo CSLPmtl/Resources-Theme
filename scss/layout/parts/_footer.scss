@@ -1,6 +1,6 @@
 #colophon {
 	min-height: 15em;
-	background: $c__brand-charcoal;
+	background: $c__brand-grey;
 	padding: 1em;
 	.site-footer__inner {
 		display: flex;
@@ -9,7 +9,7 @@
 
 	.menu {
 		width: 100%;
-		border-top: 1px solid white;
+		border-top: 1px solid $c__brand-charcoal;
 		margin: 1em;
 		padding: 1em 0;
 		list-style-type: none;
@@ -17,8 +17,11 @@
 
 	.menu-item {
 		a {
-			color: $c__brand-white;
+			color: $c__brand-charcoal;
 			text-decoration: none;
+			font-size: 12px;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 700;
 		}
 
 	}
@@ -26,17 +29,17 @@
 	.logos {
 		margin-right: 2rem;
 		display: flex;
-		a {
-			max-width: 180px;
-			width: auto;
-			height: auto;
-			max-height: 50px;
-			display: inline-block;
-			margin: 1em;
-		}
-		img {
-			height: 100%;
-			width: auto;
-		}
+		// a {
+		// 	max-width: 180px;
+		// 	width: 100%;
+		// 	height: 100%;
+		// 	max-height: 50px;
+		// 	display: inline-block;
+		// 	margin: 1em;
+		// }
+		// img {
+		// 	height: 100%;
+		// 	width: auto;
+		// }
 	}
 }
