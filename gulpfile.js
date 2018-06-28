@@ -11,10 +11,12 @@
 const gulp = require('gulp')
 const	sass = require('gulp-sass')
 const babel = require('gulp-babel')
+const source = require('vinyl-source-stream')
+const buffer = require('vinyl-buffer')
 const	concat = require('gulp-concat')
 const	uglify = require('gulp-uglify')
 const	rename = require('gulp-rename')
-// const rollup = require('gulp-rollup')
+const browserify = require('browserify')
 const	sourcemaps = require('gulp-sourcemaps')
 const	autoprefixer = require('gulp-autoprefixer')
 const browserSync = require('browser-sync').create()
@@ -58,6 +60,31 @@ gulp.task( 'js', function (callback) {
 	.on('end', callback)
 })
 
+// // js compile with webpack because I need this
+gulp.task( 'js-stories', function (callback) {
+
+	let b = browserify({
+		entries: 'stories/main.js',
+		presets: ['env'],
+		transform: ['babelify'],
+		extensions: ['.js'],
+		debug: true
+	})
+
+	return b.bundle()
+	.pipe(source('stories.js'))
+	.pipe(buffer())
+	.pipe(sourcemaps.init({loadMaps: true}))
+		.pipe(gulp.dest(paths.jsBuild, { mode: '0777', cwd: process.cwd() + '/theme/' } ))
+		.pipe(rename('stories.min.js'))
+		//.pipe(uglify())
+		.on('error', logError)
+	.pipe(sourcemaps.write())
+	.pipe(gulp.dest(paths.jsBuild, { mode: '0777', cwd: process.cwd() + '/theme/' }))
+	.pipe(browserSync.reload({stream: true}))
+	.on('end', callback)
+})
+
 
 // SCSS compile
 gulp.task( 'css', function (callback) {
@@ -81,6 +108,8 @@ gulp.task( 'browserSync', () => browserSync.init( config.browserSync ) )
 gulp.task('watch', () => {
 	gulp.watch(paths.js)
 	.on('change', gulp.series('js'))
+
+	gulp.watch('stories/**/*.js').on('change', gulp.series('js-stories'))
 
 	gulp.watch(paths.styles)
 	.on('change', gulp.series('css'))

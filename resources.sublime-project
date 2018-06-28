@@ -2,16 +2,16 @@
 	"folders":
 	[
 		{
-			"path": "FPPSE"
+			"path": "stories"
 		},
 		{
-			"path": "theme"
+			"path": "src"
 		},
 		{
 			"path": "scss"
 		},
 		{
-			"path": "src"
+			"path": "/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme"
 		}
 	]
 }

@@ -90,7 +90,7 @@
 		font-size: inherit;
 		font-family: inherit;
 	}
-	#theme-meta__header {
+	#theme-meta__header, #cat-meta__header {
 		h2 {
 			margin: 0;
 		}
@@ -106,7 +106,7 @@
 		}
 	}
 
-	#theme-meta__list {
+	#theme-meta__list, #cat-meta__list {
 		padding: 0;
 		.story {
 			margin-top: 1em;
