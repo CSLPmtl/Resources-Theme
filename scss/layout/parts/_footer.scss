@@ -9,21 +9,25 @@
 
 	.menu {
 		width: 100%;
-		border-top: 1px solid $c__brand-charcoal;
-		margin: 1em;
+		// border-top: 1px solid $c__brand-charcoal;
+		box-model: border-box;
 		padding: 1em 0;
 		list-style-type: none;
 	}
 
 	.menu-item {
+		padding: .4rem;
+		border-radius: 4px;
 		a {
+			display: block;
 			color: $c__brand-charcoal;
-			text-decoration: none;
 			font-size: 12px;
 			font-family: 'Roboto', sans-serif;
 			font-weight: 700;
 		}
-
+		&:hover, &:focus {
+			background: rgba(25, 25, 25, 0.08);
+		}
 	}
 
 	.logos {
