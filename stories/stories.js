@@ -5,8 +5,8 @@ import story from './util/stories.js'
 import categ from './util/cat.js'
 
 const a = axios.create({
-	// baseURL: window._burl // set in HTML via wordpress
-	baseURL: 'http://10.106.133.138/~mheming/resources/wp-json/wp/v2/' // development
+	baseURL: window._burl // set in HTML via wordpress
+	//baseURL: 'http://10.106.133.138/~mheming/resources/wp-json/wp/v2/' // development
 })
 
 const toggle = document.getElementById('a')
@@ -22,15 +22,20 @@ state.backone = function () {
 	this.drillLevel -= 1
 	console.log('state.drillLevel: ', state.drillLevel)
 }
+state.hidemeta = function () {
+	document.querySelectorAll('.stories-meta')[0].className = 'stories-meta hidden'
+}
 
 const themesContainer = document.getElementById('stories__by-theme')
 const categsContainer = document.getElementById('stories__by-cat')
 const themeItems = themesContainer.querySelectorAll('.theme-card')
 const categItems = categsContainer.querySelectorAll('.category-card')
+document.getElementById('cat-meta').className = 'hidden'
+document.getElementById('theme-meta').className = 'hidden'
 
 const d = document.getElementById('drilldown');
 
-// Add toggle evntlis
+// Add toggle evntlist
 toggle.addEventListener('click', function () {
 	themesToggled = !toggle.checked;
 	if (!themesToggled) {
@@ -40,6 +45,10 @@ toggle.addEventListener('click', function () {
 		themesContainer.className = '';
 		categsContainer.className = 'selected';
 	}
+
+	document.getElementById('cat-meta').className = 'hidden'
+	document.getElementById('theme-meta').className = 'hidden'
+	document.getElementById('story').className = 'hidden'
 })
 
 if (!themesToggled) {
