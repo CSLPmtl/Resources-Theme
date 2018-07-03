@@ -9,19 +9,19 @@
 */
 
 const gulp = require('gulp')
-const	sass = require('gulp-sass')
+const sass = require('gulp-sass')
 const babel = require('gulp-babel')
 const source = require('vinyl-source-stream')
 const buffer = require('vinyl-buffer')
-const	concat = require('gulp-concat')
-const	uglify = require('gulp-uglify')
-const	rename = require('gulp-rename')
+const concat = require('gulp-concat')
+const uglify = require('gulp-uglify')
+const rename = require('gulp-rename')
 const browserify = require('browserify')
-const	sourcemaps = require('gulp-sourcemaps')
-const	autoprefixer = require('gulp-autoprefixer')
+const sourcemaps = require('gulp-sourcemaps')
+const autoprefixer = require('gulp-autoprefixer')
 const browserSync = require('browser-sync').create()
 
-const	paths = {
+const paths = {
 	domain: 'http://10.106.133.138/~mheming/resources/',
 	theme: 'theme/',
 	js: 'src/**/*.js',
@@ -64,7 +64,7 @@ gulp.task( 'js', function (callback) {
 gulp.task( 'js-stories', function (callback) {
 
 	let b = browserify({
-		entries: 'stories/main.js',
+		entries: 'stories/stories.js',
 		presets: ['env'],
 		transform: ['babelify'],
 		extensions: ['.js'],
