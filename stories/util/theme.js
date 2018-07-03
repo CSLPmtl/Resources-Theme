@@ -24,10 +24,13 @@ module.exports = {
 		// set the element to visible
 		const t = document.getElementById('theme-meta')
 		state.drillLevel = 1 // not implemented
+		document.getElementById('cat-meta').className = 'hidden'
+		document.getElementById('theme-meta').className = ''
+		document.getElementById('story').className = 'hidden'
 
 		// set meta description
 		t.querySelectorAll('#theme-meta__header h2')[0].innerHTML = theme.name
-		t.querySelectorAll('#theme-meta__header span')[0].innerHTML = state.levelString
+		t.querySelectorAll('#theme-meta__header span')[0].innerHTML = state.levelstring
 		document.getElementById('theme-meta__content').innerHTML = theme.description
 
 		// set async

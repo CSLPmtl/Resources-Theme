@@ -7,9 +7,23 @@ module.exports = {
 	},
 
 	showStory: function (story, state) {
+		document.getElementById('cat-meta').className = 'hidden'
+		document.getElementById('theme-meta').className = 'hidden'
+
 		const s = document.getElementById('story')
+		s.className = ''
 		document.getElementById('story-title').innerHTML = story.title.rendered
-		s.querySelectorAll('header span')[0].innerHTML = '<button id="backtwo">by ' + state.active + '</button> > ' +
+		s.querySelectorAll('header span')[0].innerHTML = state.levelstring + ' > ' + story.title.rendered
+
+
+
+		document.getElementById('story__body-desc').innerHTML = story.stories_description
+		document.getElementById('story__body-res').innerHTML = story.stories_resources
+
+
+		// let res = []
+		// let resHTML = '<ul>'
+		// document.getElementById('story__body-links').innerHTML = story.resHTML
 
 		console.log('story: ', story);
 	},
@@ -29,6 +43,4 @@ module.exports = {
 			case 5: return 'Expert'
 		}
 	}
-
-
 }
