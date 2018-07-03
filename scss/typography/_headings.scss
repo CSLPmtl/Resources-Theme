@@ -13,12 +13,15 @@ h6 {
 h4, h5, h6 { font-weight: 700; }
 
 .entry-title {
-  font-size: 3em;
+  @include font-size(3);
+}
+.section-title {
+  @include font-size(2);
 }
 
 h1 {
 	@include font-size(2);
-  letter-spacing: 2.1px;
+  letter-spacing: 1px;
 	line-height: 1.3;
 
 	@inlcude media('>tablet') {

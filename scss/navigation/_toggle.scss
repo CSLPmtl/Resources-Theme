@@ -40,3 +40,9 @@
 	// 	transition: all .3s;
 	// }
 }
+
+@include media('>tablet') {
+	.menu-toggle {
+		display: none;
+	}
+}
