@@ -16,6 +16,12 @@
 		transform: translate3D(0, 0, 0);
 	}
 
+	@include media('>phone') {
+		&.nav-up {
+			transform: translate3D(0, -150%, 0);
+		}
+	}
+
 	.site-navigation__m-switcher {
 		position: fixed;
 		display: flex;

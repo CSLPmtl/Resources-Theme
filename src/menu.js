@@ -43,7 +43,7 @@
 	};
 
 	// Get all the link elements within the menu.
-	links    = menu.getElementsByTagName( 'a' );
+	links = menu.getElementsByTagName( 'a' );
 
 	// Each time a menu link is focused or blurred, toggle focus.
 	for ( i = 0, len = links.length; i < len; i++ ) {
@@ -72,6 +72,49 @@
 			self = self.parentElement;
 		}
 	}
+
+	// @ http://jsfiddle.net/mariusc23/s6mLJ/31/
+
+	// hides the nav on scroll
+	var didScroll;
+	var lastScrollTop = 0;
+	var delta = 5;
+	var navbarHeight = container.getBoundingClientRect().height;
+	window.addEventListener('scroll', function () { didScroll = true });
+
+	//  exec on an interval to keep logic perfomant
+	setInterval(function () {
+		if (didScroll) {
+			hasScrolled()
+			didScroll = false
+		}
+	}, 250);
+
+	function hasScrolled() {
+		var st = window.pageYOffset
+
+		// Make sure they scroll more than delta
+		if (Math.abs(lastScrollTop - st) <= delta)
+      return
+
+    if (st > lastScrollTop && st > navbarHeight) {
+      // Scroll Down
+      container.classList.remove('nav-down')
+      container.classList.add('nav-up')
+    } else {
+      // Scroll Up
+      if (st + window.innerHeight < document.documentElement.offsetHeight ) {
+        container.classList.add('nav-down')
+      	container.classList.remove('nav-up')
+      }
+    }
+    lastScrollTop = st;
+	}
+
+
+
+
+
 
 	/**
 	 * Toggles `focus` class to allow submenu access on tablets.
