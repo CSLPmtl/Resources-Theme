@@ -1,0 +1,25 @@
+.teacherpage {
+	margin: 4em auto;
+	@include media('>tablet') {
+		max-width: 700px;
+	}
+}
+
+.nav-links {
+	display: flex;
+	max-width: 700px;
+	margin: 4em auto;
+	.nav-previous, .nav-next {
+		width: 49%;
+
+		box-shadow: 0 0 3px rgba(50, 50, 50, 0.2);
+		margin: 1%;
+		transition: .4s ease all;
+		cursor: pointer;
+		border-radius: 4px;
+		a { color: black; display: block;		padding: 2em;}
+		&:hover {
+			box-shadow: 0 0 3px rgba(50, 50, 50, 0.5);
+		}
+	}
+}

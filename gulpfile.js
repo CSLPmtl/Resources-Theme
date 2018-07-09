@@ -3,10 +3,22 @@
 	==
 	run the whole shabang with `$ gulp` in the project directory
 	install them all with
-	$ npm i -D gulp gulp-sass gulp-babel gulp-concat gulp-uglify gulp-rename gulp-sourcemaps gulp-autoprefixer browser-sync
-
+	$ npm i -D
+		gulp gulp-sass
+		gulp-babel
+		gulp-concat
+		gulp-uglify
+		gulp-rename
+		gulp-sourcemaps
+		gulp-autoprefixer
+		browserify
+		babelify
+		browser-sync
+		vinyl-buffer
+		vinyl-source-stream
 	Note that this gulpfile uses Gulp 4 syntax
 */
+
 
 const gulp = require('gulp')
 const sass = require('gulp-sass')
@@ -21,97 +33,74 @@ const sourcemaps = require('gulp-sourcemaps')
 const autoprefixer = require('gulp-autoprefixer')
 const browserSync = require('browser-sync').create()
 
-const paths = {
-	domain: 'http://10.106.133.138/~mheming/resources/',
-	theme: 'theme/',
-	js: 'src/**/*.js',
-	jsBuild: 'assets/js/', // this is where the minified and concat'd project js build file will go
-	styles: './scss/**/*.scss', // watch these directories
-	stylesBuild: 'assets/css/' // this is where the minified, compiled css will go
-}
 
-const config = {
-	autoprefixer: {
-		browsers: ['last 3 versions', '> 5%', 'Firefox ESR']
-	},
-	sass: {
-		errLogToConsole: true,
-		outputStyle: 'compressed' // compressed, compact, expanded
-	},
-	browserSync: {
-		proxy: paths.domain
-	}
-}
+const config = require('./config.json')
 
 
-// js compile
-gulp.task( 'js', function (callback) {
-	return gulp.src(paths.js)
-	.pipe(sourcemaps.init())
-	.pipe(concat('all.js'))
-	.pipe(babel({ presets: ['env'] }))
-	.pipe(gulp.dest(paths.jsBuild, { mode: '0777', cwd: process.cwd() + '/theme/' } ))
-	.pipe(rename('all.min.js'))
-	.pipe(uglify())
-	.on('error', logError)
-	.pipe(sourcemaps.write())
-	.pipe(gulp.dest(paths.jsBuild, { mode: '0777', cwd: process.cwd() + '/theme/' }))
-	.pipe(browserSync.reload({stream: true}))
-	.on('end', callback)
-})
+// Take each script and compile it (and the scripts it imports) as separate scripts
+config.scripts.forEach(script => {
+	gulp.task(script.name + '-js', function (callback) {
 
-// // js compile with webpack because I need this
-gulp.task( 'js-stories', function (callback) {
+		let b = browserify({
+			entries: config.paths.jsBase + script.main , // say, 'stories/main.js'
+			presets: ['env'],
+			transform: ['babelify'],
+			extensions: ['.js'],
+			debug: true
+		})
 
-	let b = browserify({
-		entries: 'stories/stories.js',
-		presets: ['env'],
-		transform: ['babelify'],
-		extensions: ['.js'],
-		debug: true
+		return b.bundle()
+		.pipe(source(script.name + '.js'))
+		.pipe(buffer()) // uglify works on buffered streams
+		// .pipe(sourcemaps.init({loadMaps: true}))
+			.pipe(gulp.dest(config.paths.jsBuild,
+				{ mode: '0777', cwd: process.cwd() + '/theme/' } ))
+			.pipe(gulp.dest('dist/assets/js/')) // pipe to repo
+			.pipe(rename(script.name + '.min.js'))
+			.pipe(buffer())
+			.pipe(uglify())
+			.on('error', logError)
+		// .pipe(sourcemaps.write())
+
+		.pipe(gulp.dest(config.paths.jsBuild + 'min/',
+			{ mode: '0777', cwd: process.cwd() + '/theme/' } ))
+		.pipe(gulp.dest('dist/assets/js/min/'))
+
+		.pipe(browserSync.reload({stream: true}))
+		.on('end', callback)
 	})
-
-	return b.bundle()
-	.pipe(source('stories.js'))
-	.pipe(buffer())
-	.pipe(sourcemaps.init({loadMaps: true}))
-		.pipe(gulp.dest(paths.jsBuild, { mode: '0777', cwd: process.cwd() + '/theme/' } ))
-		.pipe(rename('stories.min.js'))
-		//.pipe(uglify())
-		.on('error', logError)
-	.pipe(sourcemaps.write())
-	.pipe(gulp.dest(paths.jsBuild, { mode: '0777', cwd: process.cwd() + '/theme/' }))
-	.pipe(browserSync.reload({stream: true}))
-	.on('end', callback)
 })
 
 
 // SCSS compile
 gulp.task( 'css', function (callback) {
-	return gulp.src(paths.styles)
+	return gulp.src(config.paths.styles)
 	.pipe(sourcemaps.init())
-	.pipe(sass(config.sass))
-	.pipe(sourcemaps.write())
+	.pipe(sass(config.tools.sass))
 	.on('error', logError)
-	.pipe(autoprefixer(config.autoprefixer))
-	.pipe(gulp.dest(paths.stylesBuild, { mode: '0777', cwd: process.cwd() + '/theme/' }))
+	.pipe(autoprefixer(config.tools.autoprefixer))
+	.pipe(sourcemaps.write('./maps'))
+	.pipe(gulp.dest(config.paths.stylesBuild,
+		{ mode: '0777', cwd: process.cwd() + '/theme/' }))
+	.pipe(gulp.dest('dist/assets/css'))
 	.pipe(browserSync.reload({stream: true}))
 	.on('end', callback)
 })
 
 
 // Live Reload
-gulp.task( 'browserSync', () => browserSync.init( config.browserSync ) )
+gulp.task( 'browserSync', () => browserSync.init( config.tools.browserSync ) )
 
 
 // Watch Files For Changes (Scripts and Styles)
 gulp.task('watch', () => {
-	gulp.watch(paths.js)
-	.on('change', gulp.series('js'))
+	// create a watcher for each top-level script
+	config.scripts.forEach( script => {
+		gulp.watch(config.paths.jsBase + script.glob)
+		.on('change', gulp.series(script.name + '-js'))
+	})
 
-	gulp.watch('stories/**/*.js').on('change', gulp.series('js-stories'))
-
-	gulp.watch(paths.styles)
+	gulp.watch(config.paths.styles)
 	.on('change', gulp.series('css'))
 })
 
@@ -124,6 +113,6 @@ gulp.watch( 'gulpfile.js' ).on('change', () => process.exit(0) )
 
 var logError =  function ( err ) {
 	console.error( err.message )
-	browserSync.notify(err.message, 3000) // Display error in the browser
+	browserSync.notify( err.message, 3000 ) // Display error in the browser
 	this.emit('end') // Prevent gulp from catching the error and exiting the watch process
 }

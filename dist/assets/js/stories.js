@@ -1,17 +1,4 @@
 (function(){function r(e,n,t){function o(i,f){if(!n[i]){if(!e[i]){var c="function"==typeof require&&require;if(!f&&c)return c(i,!0);if(u)return u(i,!0);var a=new Error("Cannot find module '"+i+"'");throw a.code="MODULE_NOT_FOUND",a}var p=n[i]={exports:{}};e[i][0].call(p.exports,function(r){var n=e[i][1][r];return o(n||r)},p,p.exports,r,e,n,t)}return n[i].exports}for(var u="function"==typeof require&&require,i=0;i<t.length;i++)o(t[i]);return o}return r})()({1:[function(require,module,exports){
-module.exports = { "default": require("core-js/library/fn/json/stringify"), __esModule: true };
-},{"core-js/library/fn/json/stringify":2}],2:[function(require,module,exports){
-var core = require('../../modules/_core');
-var $JSON = core.JSON || (core.JSON = { stringify: JSON.stringify });
-module.exports = function stringify(it) { // eslint-disable-line no-unused-vars
-  return $JSON.stringify.apply($JSON, arguments);
-};
-
-},{"../../modules/_core":3}],3:[function(require,module,exports){
-var core = module.exports = { version: '2.5.6' };
-if (typeof __e == 'number') __e = core; // eslint-disable-line no-undef
-
-},{}],4:[function(require,module,exports){
 'use strict';
 
 var _theme = require('./util/theme.js');
@@ -29,8 +16,8 @@ var _cat2 = _interopRequireDefault(_cat);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var a = axios.create({
-	// baseURL: window._burl // set in HTML via wordpress
-	baseURL: 'http://10.106.133.138/~mheming/resources/wp-json/wp/v2/' // development
+	baseURL: window._burl // set in HTML via wordpress
+	//baseURL: 'http://10.106.133.138/~mheming/resources/wp-json/wp/v2/' // development
 });
 
 var toggle = document.getElementById('a');
@@ -59,7 +46,7 @@ document.getElementById('theme-meta').className = 'hidden';
 
 var d = document.getElementById('drilldown');
 
-// Add toggle evntlis
+// Add toggle evntlist
 toggle.addEventListener('click', function () {
 	themesToggled = !toggle.checked;
 	if (!themesToggled) {
@@ -129,14 +116,8 @@ categItems.forEach(function (item) {
 	});
 });
 
-},{"./util/cat.js":5,"./util/stories.js":6,"./util/theme.js":7}],5:[function(require,module,exports){
+},{"./util/cat.js":2,"./util/stories.js":3,"./util/theme.js":4}],2:[function(require,module,exports){
 'use strict';
-
-var _stringify = require('babel-runtime/core-js/json/stringify');
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 module.exports = {
 	isCached: function isCached(ID) {
@@ -144,7 +125,7 @@ module.exports = {
 	},
 
 	cache: function cache(data) {
-		localStorage.setItem('c' + data.id, (0, _stringify2.default)(data));
+		localStorage.setItem('c' + data.id, JSON.stringify(data));
 	},
 
 	get: function get(catID, axios, callback) {
@@ -207,7 +188,7 @@ module.exports = {
 	}
 };
 
-},{"babel-runtime/core-js/json/stringify":1}],6:[function(require,module,exports){
+},{}],3:[function(require,module,exports){
 'use strict';
 
 module.exports = {
@@ -261,14 +242,8 @@ module.exports = {
 	}
 };
 
-},{}],7:[function(require,module,exports){
+},{}],4:[function(require,module,exports){
 'use strict';
-
-var _stringify = require('babel-runtime/core-js/json/stringify');
-
-var _stringify2 = _interopRequireDefault(_stringify);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // theme functions
 module.exports = {
@@ -278,7 +253,7 @@ module.exports = {
 	},
 
 	cache: function cache(data) {
-		localStorage.setItem('t' + data.id, (0, _stringify2.default)(data));
+		localStorage.setItem('t' + data.id, JSON.stringify(data));
 	},
 
 	get: function get(themeID, axios, callback) {
@@ -338,5 +313,5 @@ module.exports = {
 	}
 };
 
-},{"babel-runtime/core-js/json/stringify":1}]},{},[4])
+},{}]},{},[1])
 

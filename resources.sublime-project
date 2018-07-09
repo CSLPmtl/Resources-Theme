@@ -2,16 +2,10 @@
 	"folders":
 	[
 		{
-			"path": "activities"
+			"path": "src/scripts"
 		},
 		{
-			"path": "stories"
-		},
-		{
-			"path": "src"
-		},
-		{
-			"path": "scss"
+			"path": "src/scss"
 		},
 		{
 			"path": "/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme"
