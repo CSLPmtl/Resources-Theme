@@ -123,7 +123,11 @@ function cslpres_activities_categories () {
 			'label' => __( 'Categories' ),
 			'rewrite' => array( 'slug' => 'category' ),
 			'hierarchical' => true,
+			// 'rewrite' => array( 'slug' => 'work_type' ),
 			'show_in_nav_menus' => false,
+			'show_in_rest'       => true,
+			'rest_base'          => 'activity_cat',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
 		)
 	);
 }

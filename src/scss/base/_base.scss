@@ -48,6 +48,11 @@ html {
 body {
 	font-size: 62.5%;
 	background: $c__background-body; /* Fallback for when there is no custom background color defined. */
+	flex-direction: column;
+	-webkit-font-smoothing: antialiased;
+	text-rendering: optimizeLegibility;
+	font-feature-settings: "pnum";
+	font-variant-numeric: proportional-nums;
 }
 
 /*

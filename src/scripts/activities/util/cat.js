@@ -1,14 +1,14 @@
 module.exports = {
 	isCached: function (ID) {
-		return localStorage.getItem('c'+ID) ? true : false
+		return localStorage.getItem('abra_ac' + ID) ? true : false
 	},
 
 	cache: function (data) {
-		localStorage.setItem('c' + data.id, JSON.stringify(data))
+		localStorage.setItem('abra_ac' + data.id, JSON.stringify(data))
 	},
 
 	get: function (catID, axios, callback) {
-		axios.get('categories/' + catID).then( response => {
+		axios.get('activity_cat/' + catID).then( response => {
 			this.cache(response.data)
 			callback(response.data)
 		}).catch('error', function (error) {
@@ -23,10 +23,9 @@ module.exports = {
 		const c = document.getElementById('cat-meta')
 		state.drillLevel = 1 // not implemented
 		document.getElementById('cat-meta').className = ''
-		document.getElementById('theme-meta').className = 'hidden'
 		document.getElementById('story').className = 'hidden'
 
-		console.log('state: ', state);
+		console.log('cat: ', cat);
 
 		// set meta description
 		c.querySelectorAll('#cat-meta__header h2')[0].innerHTML = cat.name
@@ -35,7 +34,7 @@ module.exports = {
 
 		// set async
 		setTimeout( //  + '&fields=id,title,stories_description' :(
-			story.getRelatedStories('story?categories=' + cat.id, function (stories) {
+			story.getRelatedStories('activity?activity_cat=' + cat.id, function (stories) {
 				var list = document.getElementById('cat-meta__list')
 				list.className = 'isRefreshing'
 				list.innerHTML = ''
@@ -54,7 +53,12 @@ module.exports = {
 					document.getElementById('cat-meta__list').appendChild(el)
 
 					el.addEventListener('click', () => {
+						state.drillLevel += 1
 						story.showStory(s, state)
+						story.getActivityIcon(s.id, axios)
+						story.getStoriesInCat('', (data) => {
+
+						}, axios)
 					})
 				}
 				list.className = ''

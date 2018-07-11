@@ -119,9 +119,12 @@
 	}
 
 	.tool-home__masthead {
-		display: flex;
-		flex-direction: reverse;
-		flex-wrap: wrap;
+		height: 90vh;
+		position: relative;
+		// color: white;
+		// h1 {
+		// 	color: white;
+		// }
 	}
 }
 
@@ -131,3 +134,26 @@
 		padding-top: 0;
 	}
 }
+
+// #stripes {
+// 	width: 100%;
+// 	height: 90vh;
+// 	overflow: hidden;
+// 	z-index: -3;
+// 	position: absolute;
+// 	transform: skewY(-7deg);
+// 	transform-origin: 0;
+// 	background: linear-gradient(150deg, #{$c__brand-blue} 15%, #{$c__brand-blue-dark} 94%);
+// 	// span { display: block;}
+// // 	&::first-child {
+// // 		width: 33.33333%;
+// // 		left: -16.66666%;
+// // 		background: #53f;
+// // 	}
+// // 	&::nth-child(2) {
+// // 		width: 14%;
+// // 		right: 0;
+// // 		bottom: 40px;
+// // 		background: #2be7ff;
+// // 	}
+// }

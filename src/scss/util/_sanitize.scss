@@ -188,6 +188,13 @@ sup {
 	top: -.5em;
 }
 
+@supports (font-variant-position: super) {
+	sup {
+		top: initial;
+		font-variant-position: super;
+	}
+}
+
 
 /* Embedded content (https://html.spec.whatwg.org/multipage/embedded-content.html#embedded-content)
    ========================================================================== */

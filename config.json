@@ -27,7 +27,11 @@
 	},{
 		"name": "stories",
 		"main": "stories/stories.js",
-		"glob": ["stories/*.js"]
+		"glob": ["stories/**/*.js"]
+	},{
+		"name": "activities",
+		"main": "activities/activities.js",
+		"glob": ["activities/**/*.js"]
 	}],
 
 	"tools": {

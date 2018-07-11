@@ -8,8 +8,6 @@
  */
 
 
-
-
 if ( ! function_exists( 'cslpres_setup' ) ) :
 	/**
 	 * Sets up theme defaults and registers support for various WordPress features.
@@ -105,13 +103,21 @@ function cslpres_scripts() {
 	wp_enqueue_script( 'smoothscroll', 'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js', array(), false, true );
 
 	// Utils
-	wp_enqueue_script( 'lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.core.min.js', array(), false, true );
+	wp_enqueue_script( 'cslp-lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.core.min.js', array(), false, true );
 
 	// site logic
 	if (CSLP_DEV) {
-		wp_enqueue_script( 'cslpres-main', get_template_directory_uri() . '/assets/js/all.js', array('smoothscroll', 'lodash'), date("YmdHis"), true );
+		wp_enqueue_script( 'cslpres-main', get_template_directory_uri() . '/assets/js/common.js', array('smoothscroll', 'cslp-lodash'), date("YmdHis"), true );
+		wp_enqueue_script( 'cslpres-anim', get_template_directory_uri() . '/assets/js/animation.js', array(), date("YmdHis"), true );
 	} else {
-		wp_enqueue_script( 'cslpres-main', get_template_directory_uri() . '/assets/js/all.min.js', array('smoothscroll', 'lodash'), CSLPRES_VER, true );
+		wp_enqueue_script( 'cslpres-main', get_template_directory_uri() . '/assets/js/min/common.min.js', array('smoothscroll', 'cslp-lodash'), CSLPRES_VER, true );
+		wp_enqueue_script( 'cslpres-anim', get_template_directory_uri() . '/assets/js/min/animation.min.js', array(), CSLPRES_VER, true );
+	}
+
+	wp_enqueue_script( 'cslpres-menu', get_template_directory_uri() . '/assets/js/min/menu.min.js', array(), CSLPRES_VER, true );
+
+	if (is_front_page()) {
+		wp_enqueue_script( 'cslpres-home', get_template_directory_uri() . '/assets/js/min/home.min.js', array(), CSLPRES_VER, true );
 	}
 
 	// stories thing
@@ -119,7 +125,14 @@ function cslpres_scripts() {
 		// load 'https://cdn.jsdelivr.net/npm/vue' in prod
 		// wp_enqueue_script( 'vue', 'https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js', array(), '2.5.16', true);
 		wp_enqueue_script( 'axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js', array(), '0.18.0', true );
-		wp_enqueue_script( 'cslpres-stories', get_template_directory_uri() . '/assets/js/stories.js', array('axios'), CSLPRES_VER, true );
+		wp_enqueue_script( 'cslpres-stories', get_template_directory_uri() . '/assets/js/min/stories.min.js', array('axios'), CSLPRES_VER, true );
+	}
+
+	// TODO: namespace these to ABRA
+	// activities thing
+	if ( is_page_template('page-activities.php') ) {
+		wp_enqueue_script( 'axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js', array(), '0.18.0', true );
+		wp_enqueue_script( 'cslpres-activities', get_template_directory_uri() . '/assets/js/activities.js', array('axios'), CSLPRES_VER, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cslpres_scripts' );

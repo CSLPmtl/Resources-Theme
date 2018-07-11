@@ -8,8 +8,15 @@
  */
 
 ?>
-
+<div id="stripes" aria-hidden="true">
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+	<span></span>
+</div>
 <section class="tool-section tool-home__masthead white">
+
 	<div class="tool-blurb">
 		<header class="entry-header">
 			<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
@@ -46,7 +53,8 @@
 				    'hd'       => 1,
 				    'autohide' => 1,
 				    'showinfo' => 0,
-				    'modestbranding' =>1
+				    'modestbranding' => 1,
+				    'wmode' => 'transparent'
 					);
 
 					$new_src = add_query_arg($params, $src);
@@ -67,7 +75,7 @@
 if ( have_rows('th_content') ) {
 	$index = 0;
 	while( have_rows('th_content') ) : the_row();
-		if (($index % 2)== 0) {
+		if (($index % 2) == 0) {
 			$class = 'blue';
 		} else {
 			$class = 'white';
@@ -102,7 +110,8 @@ if ( have_rows('th_content') ) {
 					    'hd'       => 1,
 					    'autohide' => 1,
 					    'showinfo' => 0,
-					    'modestbranding' =>1
+					    'modestbranding' => 1,
+					    'wmode' => 'transparent'
 						);
 
 						$new_src = add_query_arg($params, $src);
