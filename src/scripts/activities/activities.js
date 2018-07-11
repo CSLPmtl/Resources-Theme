@@ -6,8 +6,8 @@ import categ from './util/cat.js'
 
 const a = axios.create({
 	// baseURL: window._burl // set in HTML via wordpress
-	// baseURL: 'http://doe.concordia.ca/cslp/wp-json/wp/v2/' // development
-	baseURL: 'http://10.106.133.138/~mheming/resources/wp-json/wp/v2/'
+	baseURL: 'http://doe.concordia.ca/cslp/wp-json/wp/v2/' // development
+	// baseURL: 'http://10.106.133.138/~mheming/resources/wp-json/wp/v2/'
 })
 
 // app state

@@ -17,3 +17,25 @@ a {
 		outline: 0;
 	}
 }
+
+
+a[href$='.pdf'],
+a[href$='.PDF'] {
+	background: transparent url('../icons/icon_PDF_small.png') center right no-repeat;
+	padding-right: 17px;
+}
+a[href$='.doc'],
+a[href$='.DOC'],
+a[href$='.docx'],
+a[href$='.DOCX'] {
+	background: transparent url('../icons/icon_WORD_small.png') center right no-repeat;
+	padding: 0 16px 0 0px;
+}
+
+a[href$='.xls'],
+a[href$='.xlsx'],
+a[href$='.XLS'],
+a[href$='.XLSX'] {
+	background: transparent url('../icons/icon_EXCEL_small.png') center right no-repeat;
+	padding: 0 16px 0 3px;
+}
