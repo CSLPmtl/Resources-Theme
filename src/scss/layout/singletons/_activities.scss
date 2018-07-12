@@ -1,12 +1,252 @@
-#activity-icon img {
-	height: 100px;
-	position: absolute;
-	right: 10px;
-	top: -10px;
-}
 #back-button svg {
 	width: 40px;
 	display: block;
 	margin: 3em auto auto;
 	cursor: pointer;
+}
+
+#activities__by-cat {
+	opacity: 0;
+	visibility: hidden;
+	transition-delay: 0, 200ms;
+	transition-property: opacity, visibility;
+	transition-duration: 0, 200ms;
+	height: 0;
+}
+
+#activities__by-cat.selected {
+	visibility: visible;
+	opacity: 1;
+	transition-property: visibility, opacity;
+	transition-delay: 0;
+	height: auto;
+}
+
+#drilldown {
+	#backone { // button elelm for interactivity, styled to look like text
+		background: transparent;
+		padding: 0;
+		margin: 0;
+		border: none;
+		color: inherit;
+		font-weight: inherit;
+		font-size: inherit;
+		font-family: inherit;
+	}
+	#cat-meta__header {
+		h2 {
+			margin: 0;
+		}
+		span { // extend above rule
+			color: #bbb;
+			font-family: $font__code;
+			@include font-size(.41);
+			font-weight: normal;
+			font-family: 'Roboto';
+			text-transform: uppercase;
+			margin-bottom: 2rem;
+			display: block;
+		}
+	}
+
+	#cat-meta__list {
+		padding: 0;
+		.activity {
+			margin-top: 1em;
+			padding: 10px;
+			box-shadow: 0px 4px 7px 1px rgba(0,0,0,0.03);
+			&:hover {
+				box-shadow: 0px 4px 7px 1px rgba(0,0,0,0.08);
+			}
+			h3 {
+				margin: 2px 0 4px 0;
+			}
+			p {
+				margin-top: 0;
+				opacity: 0.8;
+			}
+		}
+	}
+
+	#cat-meta {
+		&.hidden {
+			visibility: hidden;
+			height: 0;
+			overflow: hidden;
+		}
+	}
+}
+
+#activity {
+	&.hidden {
+		display: none;
+	}
+	header > span {
+		color: #bbb;
+		font-family: $font__code;
+		@include font-size(.41);
+		padding: 0 4px;
+		text-transform: uppercase
+	}
+}
+
+#drilldown {
+	&[data-active="none"] {
+		visibility: hidden;
+		height: 0;
+	}
+	&[data-active="cat"] {
+		visibility: visible;
+		height: auto;
+	}
+}
+
+@include media('>tablet') {
+	#activities-page-container {
+		display: grid;
+		grid-template-columns: repeat(12, 1fr);
+		grid-auto-rows: 100px;
+		min-height: 100vh;
+		.activities-meta {
+			grid-column: 2 / span 10;
+			grid-row: 2 / span 3;
+			p { max-width: 100%; }
+		}
+
+		#activities__by-cat {
+			grid-column: 2 / span 10;
+			grid-row: 6 / span 3;
+			display: flex;
+
+			.category-card {
+				margin: 4px;
+				&:hover {
+					background: rgba(250, 250,250, 0.8);
+					cursor: pointer;
+				}
+				img {
+					padding: 1em;
+					width: 100%;
+					height: auto;
+					object-fit: cover;
+					max-height: 200px;
+				}
+				h3 {
+					@include font-size(1);
+					font-style: normal;
+					padding: 10px;
+					text-align: center;
+					font-weight: 700;
+				}
+			}
+		}
+		#drilldown {
+			grid-column: 2 / span 10;
+			grid-row: 3 / span 13;
+		}
+
+		#activity {
+			background: $c__brand-blue-dark;
+			padding: 1em 2em 3em 2em;
+			color: white;
+			border-radius: 6px;
+			min-height: 60vh;
+			position: relative;
+			h1, h2, h3, h4, h5, h6, a {
+				color: white;
+			}
+			h1 {
+				margin-bottom: 2px;;
+			}
+			header span {
+				display: block;
+				margin-bottom: 1em;
+			}
+			&.hidden {
+				display: none;
+			}
+		}
+	}
+	#drilldown #cat-meta__list {
+		display: flex;
+		flex-wrap: wrap;
+		.activity {
+			cursor: pointer;
+			margin: 5px 10px 10px 0;
+			width: calc(50% - 20px);
+			p {
+				display: none;
+			}
+		}
+	}
+}
+
+.abra-activities {
+	max-width: 1500px;
+}
+
+.activities-meta {
+	z-index: -1;
+	@include font-size(.8)
+}
+
+#activity-icon img {
+	height: 70px;
+	padding: 13px;
+	transition: opacity .2s ease;
+}
+
+#activity-icon {
+	background: white;
+	border: 1px solid #{$c__brand-blue-dark};
+	height: 70px;
+	width: 70px;
+	border-radius: 50px;
+	position: absolute;
+	right: -35px;
+	top: 30px;
+}
+
+#activity-video-container {
+	margin-top: 2em;
+}
+
+.activity__nav.tabs {
+	display: block;
+	margin: 0 0 20px 0;
+	padding: 0;
+	border-bottom: solid 1px white;
+	display: flex;
+	flex-wrap: wrap;
+	list-style-type: none;
+	li {
+		height: 30px;
+		padding: 0;
+		margin-bottom: 0; }
+	li a {
+		display: block;
+		text-decoration: none;
+		width: auto;
+		height: 29px;
+		padding: 0px 20px;
+		line-height: 30px;
+		margin: 0;
+		font-size: 13px; }
+	.active {
+		height: 30px;
+		position: relative;
+		border-bottom: 4px solid white;
+		margin-right: 1px;
+		margin: 0 0 0 -1px;
+		color: #111;
+	}
+}
+
+.activity__body.tabs-content {
+	& > div { display:none; }
+	& > div.active { display: block; }
+}
+
+.isRefreshing {
+	opacity: 0;
 }

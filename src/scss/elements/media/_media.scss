@@ -28,7 +28,9 @@ figure {
 	margin: 1em 0; /* Extra wide images within figure tags don't overflow the content area. */
 }
 
-.video-container, .tailor-responsive-embed {
+.video-container,
+.tailor-responsive-embed,
+#activity-video-container {
 	position:relative;
 	padding-bottom:56.25%;
 	// padding-top:30px;
@@ -37,7 +39,9 @@ figure {
 	border-radius: 4px;
 }
 
-.video-container, .tailor-responsive-embed {
+.video-container,
+.tailor-responsive-embed,
+#activity-video-container {
 	iframe, object, embed {
 		position:absolute;
 		top:0;

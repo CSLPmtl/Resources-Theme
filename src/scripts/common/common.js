@@ -8,5 +8,5 @@
 	}, 1000);
 
 	// Smoothscroll plugin
-	const scroll = new SmoothScroll('a[href*="#"]', {header: '.site-header', speed: 1000});
+	//const scroll = new SmoothScroll('a[href*="#"]', {header: '.site-header', speed: 1000});
 } ());

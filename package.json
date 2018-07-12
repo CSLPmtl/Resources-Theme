@@ -1,6 +1,7 @@
 {
   "name": "resource-sites",
   "version": "3.0.0",
+  "repository": "github:CSLPmtl/Resources-Theme",
   "description": "The LTK resource pages",
   "main": "gulpfile.js",
   "scripts": {
@@ -12,6 +13,7 @@
   "author": "Michael Hemingway",
   "license": "ISC",
   "devDependencies": {
+    "ajv": "^6.5.2",
     "babel-core": "^6.26.3",
     "babel-loader": "^7.1.4",
     "babel-preset-env": "^1.7.0",
@@ -27,14 +29,17 @@
     "gulp-sass": "^4.0.1",
     "gulp-sourcemaps": "^2.6.4",
     "gulp-uglify": "^3.0.0",
+    "node-sass": "^4.9.2",
     "vinyl-buffer": "^1.0.1",
     "vinyl-source-stream": "^2.0.0",
     "webpack": "^4.12.2"
   },
   "dependencies": {
+    "animejs": "^2.2.0",
     "babel-plugin-transform-runtime": "^6.23.0",
     "babel-preset-es2015": "^6.24.1",
-    "babel-preset-stage-2": "^6.24.1"
+    "babel-preset-stage-2": "^6.24.1",
+    "zest": "^0.1.3"
   },
   "babel": {
     "presets": [

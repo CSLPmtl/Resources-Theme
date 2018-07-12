@@ -15,7 +15,7 @@
 	height: auto;
 }
 
-#stories__by-cat {
+#stories__by-cat, #activities__by-cat {
 	display: grid;
 	grid-template-columns: auto auto;
 	grid-template-rows: 2;
