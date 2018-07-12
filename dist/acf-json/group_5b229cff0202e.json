@@ -1,6 +1,6 @@
 {
     "key": "group_5b229cff0202e",
-    "title": "Stories",
+    "title": "ABRA Stories Post Type",
     "fields": [
         {
             "key": "field_5b229d92aa22b",
@@ -85,5 +85,5 @@
     ],
     "active": 1,
     "description": "Field items for the individual stories (Story post type)",
-    "modified": 1530048464
+    "modified": 1531347976
 }

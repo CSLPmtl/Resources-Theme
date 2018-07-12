@@ -125,14 +125,14 @@ function cslpres_scripts() {
 		// load 'https://cdn.jsdelivr.net/npm/vue' in prod
 		// wp_enqueue_script( 'vue', 'https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js', array(), '2.5.16', true);
 		wp_enqueue_script( 'axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js', array(), '0.18.0', true );
-		wp_enqueue_script( 'cslpres-stories', get_template_directory_uri() . '/assets/js/min/stories.min.js', array('axios'), CSLPRES_VER, true );
+		wp_enqueue_script( 'cslpres-stories', get_template_directory_uri() . '/assets/js/min/stories.min.js', array('axios'), '', true );
 	}
 
 	// TODO: namespace these to ABRA
 	// activities thing
 	if ( is_page_template('page-activities.php') ) {
 		wp_enqueue_script( 'axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js', array(), '0.18.0', true );
-		wp_enqueue_script( 'cslpres-activities', get_template_directory_uri() . '/assets/js/activities.js', array('axios'), CSLPRES_VER, true );
+		wp_enqueue_script( 'cslpres-activities', get_template_directory_uri() . '/assets/js/activities.js', array('axios'), '', true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cslpres_scripts' );

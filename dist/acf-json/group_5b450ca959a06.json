@@ -1,11 +1,11 @@
 {
     "key": "group_5b450ca959a06",
-    "title": "ABRA Activity Category",
+    "title": "ABRA Activities' Category Taxonomy",
     "fields": [
         {
             "key": "field_5b450cc4b5ddb",
             "label": "Image",
-            "name": "image",
+            "name": "activity_cat_image",
             "type": "image",
             "instructions": "",
             "required": 0,
@@ -43,6 +43,6 @@
     "instruction_placement": "label",
     "hide_on_screen": "",
     "active": 1,
-    "description": "",
-    "modified": 1531251930
+    "description": "Add images to custom activity taxonomy",
+    "modified": 1531348262
 }

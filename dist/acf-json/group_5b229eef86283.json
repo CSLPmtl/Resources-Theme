@@ -1,46 +1,63 @@
 {
     "key": "group_5b229eef86283",
-    "title": "Activities",
+    "title": "ABRA Activities Post Type",
     "fields": [
         {
-            "key": "field_5b294ce3bcf19",
-            "label": "Video",
-            "name": "activity_video",
-            "type": "oembed",
+            "key": "field_5b479a37551c4",
+            "label": "Meta",
+            "name": "activity_meta",
+            "type": "group",
             "instructions": "",
-            "required": 0,
+            "required": 1,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
                 "class": "",
                 "id": ""
             },
-            "width": "",
-            "height": ""
-        },
-        {
-            "key": "field_5b324fbbc5e77",
-            "label": "Image",
-            "name": "activity_image",
-            "type": "image",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "return_format": "url",
-            "preview_size": "thumbnail",
-            "library": "all",
-            "min_width": "",
-            "min_height": "",
-            "min_size": "",
-            "max_width": "",
-            "max_height": "",
-            "max_size": "",
-            "mime_types": ""
+            "layout": "row",
+            "sub_fields": [
+                {
+                    "key": "field_5b324fbbc5e77",
+                    "label": "Image",
+                    "name": "activity_image",
+                    "type": "image",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "return_format": "url",
+                    "preview_size": "thumbnail",
+                    "library": "all",
+                    "min_width": "",
+                    "min_height": "",
+                    "min_size": "",
+                    "max_width": "",
+                    "max_height": "",
+                    "max_size": "",
+                    "mime_types": ""
+                },
+                {
+                    "key": "field_5b294ce3bcf19",
+                    "label": "Video",
+                    "name": "activity_video",
+                    "type": "oembed",
+                    "instructions": "",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "width": "",
+                    "height": ""
+                }
+            ]
         },
         {
             "key": "field_5b294c8cbcf18",
@@ -190,25 +207,6 @@
             ]
         },
         {
-            "key": "field_5b2a669f73ac7",
-            "label": "Resources",
-            "name": "activity_resources",
-            "type": "wysiwyg",
-            "instructions": "",
-            "required": 0,
-            "conditional_logic": 0,
-            "wrapper": {
-                "width": "",
-                "class": "",
-                "id": ""
-            },
-            "default_value": "",
-            "tabs": "all",
-            "toolbar": "full",
-            "media_upload": 1,
-            "delay": 0
-        },
-        {
             "key": "field_5b294ae2937f4",
             "label": "Linked Stories",
             "name": "activity_linked_stories",
@@ -233,6 +231,25 @@
             "min": "",
             "max": "",
             "return_format": "object"
+        },
+        {
+            "key": "field_5b2a669f73ac7",
+            "label": "Resources",
+            "name": "activity_resources",
+            "type": "wysiwyg",
+            "instructions": "",
+            "required": 0,
+            "conditional_logic": 0,
+            "wrapper": {
+                "width": "",
+                "class": "",
+                "id": ""
+            },
+            "default_value": "",
+            "tabs": "all",
+            "toolbar": "full",
+            "media_upload": 1,
+            "delay": 0
         }
     ],
     "location": [
@@ -259,6 +276,6 @@
         "send-trackbacks"
     ],
     "active": 1,
-    "description": "",
-    "modified": 1531256992
+    "description": "Define the main and meta fields for each activity",
+    "modified": 1531419283
 }

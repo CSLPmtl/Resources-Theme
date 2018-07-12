@@ -9,8 +9,14 @@
  */
 
 get_header();
-?>
-	<script type="text/javascript">var _bURL = '<?= get_site_url() . '/wp-json/wp/v2/' ?>'</script>
+
+//  set base url for axios
+if (gethostname() == 'cslp-ga2221-mh.concordia.ca' ) {
+	$burl = 'http://doe.concordia.ca/cslp/wp-json/wp/v2/';
+} else {
+	$burl = get_site_url() . '/wp-json/wp/v2/';
+} ?>
+	<script type="text/javascript">window._bURL = '<?= $burl ?>'</script>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

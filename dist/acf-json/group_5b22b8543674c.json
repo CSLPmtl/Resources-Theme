@@ -325,6 +325,6 @@
         "send-trackbacks"
     ],
     "active": 1,
-    "description": "",
-    "modified": 1530632827
+    "description": "Set content on the homepage of each tool (ABRA, ELM, READS..)",
+    "modified": 1531347893
 }

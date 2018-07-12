@@ -1,6 +1,6 @@
 <?php
 /**
- * Template part for displaying page content in page-stories.php
+ * Template part for displaying page content in page-activities.php
  *
  * @link https://developer.wordpress.org/themes/basics/template-hierarchy/
  *
@@ -9,43 +9,27 @@
 
 ?>
 
-<article id="post-<?php the_ID(); ?>" <?php post_class('abra-stories'); ?>>
-	<div class="entry-content" id="stories-page-container">
-		<div class="stories-meta">
+<article id="post-<?php the_ID(); ?>" <?php post_class('abra-activities'); ?>>
+	<div class="entry-content" id="activities-page-container">
+		<div class="activities-meta">
 				<header class="entry-header">
 		<?php the_title( '<h1 class="entry-title">', '</h1>' ); ?>
 	</header>
 			<?php the_content(); // should be only a small paragraph ?>
 		</div>
 
-		<div id="stories__by-cat" class="selected">
-			<?php // Lazily loading the entire page's content at once
-				$terms = get_terms( array(
-					'taxonomy' 		=> 'activity_cat',
-					'hide_empty'	=> true
-				));
-
-				if ( ! empty( $terms ) && ! is_wp_error( $terms ) ) {
-					$count = count( $terms );
-					$i = 0;
-					$term_list = '';
-
-					foreach ( $terms as $term ) {
-						$i++;
-						$term_list .= '<div class="category-card" data-cat="' . $term->term_id . '">';
-						$term_list .= '<a href="' . esc_url( get_term_link( $term ) ) . '">';
-						// $term_list .= '<img srcset="' . the_field('activity_cat_image', $term->term_id, false) . '" alt="category icon">';
-						$term_list .= '<h3>' . $term->name . '</h3></a></div>';
-
-					}
-					echo $term_list;
-
-					// echo '<pre>';
-					// // print_r(get_field('activity_cat_image', $term->taxonomy . '_' . $term->term_id));
-					// $tid = 'term_' . $term->term_id;
-					// // print_r('term_' . $term->term_id);
-					// echo get_field('activity_cat_image', $tid);
-					// echo '</pre>';
+		<div id="activities__by-cat" class="selected">
+			<?php
+			if ( have_rows('activitiespg_categories') ) {
+				while( have_rows('activitiespg_categories') ) { the_row(); ?>
+					<div class="category-card" data-cat="<?= get_sub_field('activitiespg_category') ?>">
+						<a href="<?= get_term_link(get_sub_field('activitiespg_category')) ?>">
+					<?php
+					?><img srcset="<?= wp_get_attachment_image_srcset(get_sub_field('activitiespg_cover')) ?>" alt=""><?php
+					echo '<h3>' . get_term_by('id', get_sub_field('activitiespg_category'), 'activity_cat')->name . '</h3>'; ?>
+						</a>
+					</div> <?php
+				}
 			} ?>
 		</div>
 
@@ -69,23 +53,36 @@
 				</div>
 			</div>
 
-			<article id="story">
-				<div id="activity-icon"></div>
+			<article id="activity">
 				<header>
-					<h1 id="story-title"></h1>
+					<h1 id="activity-title"></h1>
 					<span></span>
+					<div id="activity-icon"></div>
 				</header>
-				<nav class="story__nav tabs">
-					<div id="a-overview"></div>
-					<div id="a-gfa"></div>
-					<div id="a-level"></div>
-				</nav>
-				<div class="story__body tabs-content">
-					<div id="a-overview-c"></div>
-					<div id="a-gfa-c"></div>
-					<div id="a-level-c"></div>
+				<ul class="activity__nav tabs">
+					<li id="a-overview" class="active"><a href="#a-overview-c">Overview</a></li>
+					<li id="a-insights"><a href="#a-insights-c">Insights</a></li>
+					<li id="a-related"><a href="#a-related-c">Linked Stories</a></li>
+					<li id="a-resources"><a href="#a-resources-c">Resources</a></li>
+				</ul>
+				<div class="activity__body tabs-content">
+
+					<div id="a-overview-c" class="active">
+						<div id="activity-video-container"></div>
+						<div id="a-desc-c"></div>
+						<div id="a-gfa-c"></div>
+						<div id="a-level-c"></div>
+					</div>
+					<div id="a-insights-c"></div>
+					<div id="a-related-c"></div>
+					<div id="a-resources-c"></div>
 				</div>
 			</article>
+			<div id="back-button" class="hidden">
+				<svg version="1.1" xmlns="http://www.w3.org/2000/svg" xmlns:xlink="http://www.w3.org/1999/xlink" x="0px" y="0px" viewBox="0 0 1000 1000" enable-background="new 0 0 1000 1000" xml:space="preserve">
+					<g><path d="M990,503.4c0,25.9-21,46.9-46.9,46.9H56.9c-25.9,0-46.9-21-46.9-46.9v-4.6c0-25.9,21-46.9,46.9-46.9h886.1c25.9,0,46.9,21,46.9,46.9V503.4z"/><path d="M430.9,131.1c18.3,18.3,18.3,48.1,0,66.4L93.1,535.2c-18.3,18.3-48.1,18.3-66.4,0l-2.9-2.9C5.5,514,5.5,484.3,23.9,466l337.7-337.7c18.3-18.3,48.1-18.3,66.4,0L430.9,131.1z"/><path d="M430.9,868.9c18.3-18.3,18.3-48.1,0-66.4L93.1,464.8c-18.3-18.3-48.1-18.3-66.4,0l-2.9,2.9C5.5,486,5.5,515.7,23.9,534l337.7,337.7c18.3,18.3,48.1,18.3,66.4,0L430.9,868.9z"/></g>
+				</svg>
+			</div>
 
 		</div>
 	</div>
