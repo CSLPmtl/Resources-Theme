@@ -79,17 +79,13 @@
 	&.selected .theme-card {height: auto;}
 }
 
-#drilldown {
 
-	#backone { // button elelm for interactivity, styled to look like text
-		background: transparent;
-		padding: 0;
-		margin: 0;
-		border: none;
-		color: inherit;
-		font-weight: inherit;
-		font-size: inherit;
-		font-family: inherit;
+#drilldown {
+	#back-button {
+		position: fixed;
+		top: 50%;
+		left: 30px;
+		opacity: 0.6;
 	}
 	#theme-meta__header, #cat-meta__header {
 		h2 {
@@ -126,43 +122,14 @@
 		}
 	}
 
-	#cat-meta, #theme-meta {
-		&.hidden {
-			visibility: hidden;
-			height: 0;
-			overflow: hidden;
-		}
+	#cat-meta.hidden {
+		visibility: hidden;
+		height: 0;
+		overflow: hidden;
 	}
 }
 
-// <header>
-// 	<h1 id="story-title"></h1>
-// 	<span></span>
-// </header>
-// <div class="story__body">
-// 	<div id="story__body-desc"></div>
-// 	<div id="story__body-links"></div>
-// 	<div id="story__body-res"></div>
-// </div>
-// <nav class="story__nav">
-// 	<ul>
-// 		<li class="story__nav-item" data-nav="desc"></li>
-// 		<li class="story__nav-item" data-nav="links"></li>
-// 		<li class="story__nav-item" data-nav="res"></li>
-// 		<li class="story__nav-item" data-nav="pdf"></li>
-// 	</ul>
-// </nav>
-
 #story {
-	// background: $c__brand-blue-dark;
-	// color: $c__brand-white;
-	// border-radius: 6px;
-	// padding: 8px;
-	#story-title {
-		// color: white;
-		// font-size: 1.4em;
-		// letter-spacing: 1px;
-	}
 	&.hidden {
 		display: none;
 	}
@@ -183,10 +150,6 @@
 	&[data-active="cat"], &[data-active="theme"] {
 		visibility: visible;
 		height: auto;
-	}
-
-	&[data-active="cat"] {
-
 	}
 }
 
@@ -224,21 +187,6 @@
 					padding: 0 20px;
 				}
 			}
-		}
-		#stories__by-theme {
-			grid-column: 6 / span 6;
-			grid-row: 2 / span 4;
-			display: flex;
-			flex-wrap: wrap;
-			.theme-card {
-				width: 150px;
-				height: 150px;
-			}
-		}
-		#drilldown {
-			grid-column: 6 / span 6;
-			grid-row: 2 / span 4;
-			// display: flex;
 		}
 
 		#story {
