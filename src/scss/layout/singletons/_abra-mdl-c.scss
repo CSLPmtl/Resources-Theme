@@ -1,0 +1,64 @@
+#back-button svg {
+	width: 40px;
+	display: block;
+	margin: 3em auto auto;
+	cursor: pointer;
+}
+
+#drilldown {
+	#back-button {
+		position: fixed;
+		top: 50%;
+		left: 30px;
+		opacity: 0.6;
+	}
+	#theme-meta__header, #cat-meta__header {
+		h2 {
+			margin: 0;
+		}
+		span { // extend above rule
+			color: #bbb;
+			font-family: $font__code;
+			@include font-size(.41);
+			font-weight: normal;
+			font-family: 'Roboto';
+			text-transform: uppercase;
+			margin-bottom: 2rem;
+			display: block;
+		}
+	}
+
+	#theme-meta__list, #cat-meta__list {
+		padding: 0;
+		.story {
+			margin-top: 1em;
+			padding: 10px;
+			box-shadow: 0px 4px 7px 1px rgba(0,0,0,0.03);
+			&:hover {
+				box-shadow: 0px 4px 7px 1px rgba(0,0,0,0.08);
+			}
+			h3 {
+				margin: 2px 0 4px 0;
+			}
+			p {
+				margin-top: 0;
+				opacity: 0.8;
+			}
+		}
+	}
+
+	#cat-meta.hidden {
+		visibility: hidden;
+		height: 0;
+		overflow: hidden;
+	}
+
+	&[data-active="none"] {
+		visibility: hidden;
+		height: 0;
+	}
+	&[data-active="cat"], &[data-active="theme"] {
+		visibility: visible;
+		height: auto;
+	}
+}

@@ -54,7 +54,7 @@ module.exports = {
 					document.getElementById('cat-meta__list').appendChild(el)
 
 					el.addEventListener('click', () => {
-						story.showStory(s, state)
+						location.href = s.link
 					})
 				}
 				list.className = ''

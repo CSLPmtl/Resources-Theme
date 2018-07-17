@@ -32,11 +32,10 @@ module.exports = {
 
 		// Resources, tab 4
 		let rescontent = $('#a-resources-c')[0]
-		rescontent.innerHTML += '<h4>Resources</h4>'
 		if (data.activity_resources != '') {
-			rescontent.innerHTML += data.activity_resources
+			rescontent.innerHTML = '<h4>Resources</h4>' + data.activity_resources
 		} else {
-			rescontent.innerHTML += 'There are no resources available for this activity yet'
+			rescontent.innerHTML = 'There are no resources available for this activity yet'
 		}
 
 		$('#activity-video-container')[0].innerHTML = this.makeEmbedLink(data.activity_video)

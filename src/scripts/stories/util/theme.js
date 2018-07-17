@@ -54,7 +54,8 @@ module.exports = {
 					document.getElementById('theme-meta__list').appendChild(el)
 
 					el.addEventListener('click', () => {
-						story.showStory(s, state)
+						// story.showStory(s, state)
+						location.href = s.link
 					})
 				}
 				list.className = ''
