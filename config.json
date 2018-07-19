@@ -1,6 +1,6 @@
 {
 	"paths" : {
-		"domain" :			"http://10.106.133.138/~mheming/resources/",
+		"domain" :			"http://localhost:8888/resources/",
 		"theme" :				"theme/",
 		"jsBase" :			"src/scripts/",
 		"styles" :			"src/scss/**/*.scss",
@@ -43,7 +43,7 @@
 			"outputStyle" : "compressed"
 		},
 		"browserSync" : {
-			"proxy": "http://10.106.133.138/~mheming/resources/"
+			"proxy": "http://localhost:8888/resources/"
 		}
 	}
 }
