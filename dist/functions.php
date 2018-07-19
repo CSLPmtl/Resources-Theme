@@ -106,7 +106,7 @@ function cslpres_scripts() {
 	wp_enqueue_script( 'cslp-lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.core.min.js', array(), false, true );
 
 	// site logic
-	if (CSLP_DEV) {
+	if (CSLPRES_DEV) {
 		wp_enqueue_script( 'cslpres-main', get_template_directory_uri() . '/assets/js/common.js', array('smoothscroll', 'cslp-lodash'), date("YmdHis"), true );
 		wp_enqueue_script( 'cslpres-anim', get_template_directory_uri() . '/assets/js/animation.js', array(), date("YmdHis"), true );
 	} else {
@@ -120,29 +120,34 @@ function cslpres_scripts() {
 		wp_enqueue_script( 'cslpres-home', get_template_directory_uri() . '/assets/js/min/home.min.js', array(), CSLPRES_VER, true );
 	}
 
-	// stories thing
+	// ABRA Stories Module
 	if ( is_page_template('page-stories.php') ) {
-		// load 'https://cdn.jsdelivr.net/npm/vue' in prod
-		// wp_enqueue_script( 'vue', 'https://cdn.jsdelivr.net/npm/vue@2.5.16/dist/vue.js', array(), '2.5.16', true);
 		wp_enqueue_script( 'axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js', array(), '0.18.0', true );
-		wp_enqueue_script( 'cslpres-stories', get_template_directory_uri() . '/assets/js/min/stories.min.js', array('axios'), '', true );
+		if (CSLPRES_DEV) {
+			wp_enqueue_script( 'cslpres-stories', get_template_directory_uri() . '/assets/js/stories.js', array('axios'), '', true );
+		} else {
+			wp_enqueue_script( 'cslpres-stories', get_template_directory_uri() . '/assets/js/min/stories.min.js', array('axios'), CSLPRES_VER, true );
+		}
 	}
 
 	// TODO: namespace these to ABRA
 	// activities thing
 	if ( is_page_template('page-activities.php') ) {
 		wp_enqueue_script( 'axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js', array(), '0.18.0', true );
-		wp_enqueue_script( 'cslpres-activities', get_template_directory_uri() . '/assets/js/activities.js', array('axios'), '', true );
+		if (CSLPRES_DEV) {
+			wp_enqueue_script( 'cslpres-activities', get_template_directory_uri() . '/assets/js/activities.js', array('axios'), '', true );
+		} else {
+			wp_enqueue_script( 'cslpres-activities', get_template_directory_uri() . '/assets/js/min/activities.min.js', array('axios'), CSLPRES_VER, true );
+		}
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cslpres_scripts' );
 
 // add editor styles
 function clspres_add_editor_styles() {
-    add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-style.css' );
+  add_editor_style( get_stylesheet_directory_uri() . '/assets/css/editor-style.css' );
 }
 add_action( 'admin_init', 'clspres_add_editor_styles' );
-
 
 
 require get_template_directory() . '/inc/cleanup.php';
