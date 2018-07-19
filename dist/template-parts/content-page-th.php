@@ -49,7 +49,7 @@
 
 					// add extra params to iframe src
 					$params = array(
-				    'controls' => 0,
+				    'controls' => 1,
 				    'hd'       => 1,
 				    'autohide' => 1,
 				    'showinfo' => 0,
@@ -106,7 +106,7 @@ if ( have_rows('th_content') ) {
 
 						// add extra params to iframe src
 						$params = array(
-					    'controls' => 0,
+					    'controls' => 1,
 					    'hd'       => 1,
 					    'autohide' => 1,
 					    'showinfo' => 0,
