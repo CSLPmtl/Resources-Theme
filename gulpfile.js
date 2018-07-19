@@ -4,7 +4,8 @@
 	run the whole shabang with `$ gulp` in the project directory
 	install them all with
 	$ npm i -D
-		gulp gulp-sass
+		gulp@^4.0
+		gulp-sass
 		gulp-babel
 		gulp-concat
 		gulp-uglify
