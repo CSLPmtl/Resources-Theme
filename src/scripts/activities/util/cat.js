@@ -1,4 +1,4 @@
-const $ = require('zest')
+import $ from 'balajs'
 
 module.exports = {
 	isCached: function (ID) {
@@ -30,7 +30,10 @@ module.exports = {
 
 		// set async
 		setTimeout(
-			story.getRelatedStories('activity?activity_cat=' + cat.id, stories => {
+			story.getRelatedStories('activity?per_page=100&activity_cat=' + cat.id, stories => {
+				console.group('%c Related Stories for ID #' + cat.id, 'color: #F75C03')
+				console.info('Stories: ', stories)
+
 				const list = $('#cat-meta__list')[0]
 				list.className = 'isRefreshing'
 				list.innerHTML = ''
@@ -50,11 +53,16 @@ module.exports = {
 					el.addEventListener('click', () => {
 						state.setLevel(2)
 
+						state.pushState(s)
+
 						story.makeTabContainer()
 						story.showStory(s, state, axios)
 						story.setActivityIcon(s.id, axios)
 					})
 				}
+
+				console.groupEnd()
+
 				list.className = ''
 			}, axios
 		), 0)
