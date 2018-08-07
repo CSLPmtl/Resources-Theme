@@ -1,6 +1,7 @@
-const $ = require('zest')
+import $ from 'balajs'
 
 module.exports = {
+
 	// Story Functions
 	getRelatedStories: function (query, callback, axios) {
 		axios.get(query).then(function(res) {
@@ -35,7 +36,7 @@ module.exports = {
 		if (data.activity_resources != '') {
 			rescontent.innerHTML = '<h4>Resources</h4>' + data.activity_resources
 		} else {
-			rescontent.innerHTML = 'There are no resources available for this activity yet'
+			rescontent.innerHTML = 'This activity currently does not have any additional resources.'
 		}
 
 		$('#activity-video-container')[0].innerHTML = this.makeEmbedLink(data.activity_video)
@@ -66,6 +67,7 @@ module.exports = {
 
 	setActivityIcon (query, axios) {
 		axios.get('media?parent=' + query).then((res) => {
+			$('#activity-icon')[0].innerHTML = '' // clear old image elems
 			const icon = document.createElement('img')
 				icon.style.opacity = 0
 				icon.onload = () => { $('#activity-icon img')[0].style.opacity = 1 }
@@ -88,13 +90,15 @@ module.exports = {
 	},
 
 	getStoriesInCat (stories, axios) {
-		let query = 'story?'
+		// let query = 'story?'
+		let query = 'story?per_page=100&include[]='
 
-		// inneficient, yet WP api is so far incapable of dealing with something better.
 		for (let i = stories.length - 1; i >= 0; i--) {
-			query += 'include[]=' + stories[i] + '&'
+			// query += 'include[]=' + stories[i] + '&'
+			query += stories[i] + ','
 		}
 		query = query.slice(0, -1) // remove last ampersand
+		console.log(query)
 
 		axios.get(query).then( res => {
 			let retval = '<ul>'
