@@ -36,32 +36,26 @@ function cslpres_pingback_header() {
 }
 add_action( 'wp_head', 'cslpres_pingback_header' );
 
-// USELESS
-// via https://github.com/nCrafts/json-rest-api-filter-fields
-// add_filter( 'json_prepare_post', 'json_rest_api_filter_fields_post', 10, 3 );
-// function json_rest_api_filter_fields_post( $data, $post, $context ) {
-// 	if ( !empty($_GET['fields']) )
-// 	{
-// 		$new_data = array();
-// 		$fields = explode(',', $_GET['fields']);
-// 		if ( empty($fields) || count($fields)==0 ) { return $data; }
-// 		foreach ($data as $key => $value) {
-// 			if (in_array($key, $fields)){$new_data[$key] = $value;}
-// 		}
-// 	}
-// 	return isset($new_data) ? $new_data : $data;
-// }
+if( function_exists('acf_add_options_page') ) {
 
-// add_filter( 'json_prepare_taxonomy', 'json_rest_api_filter_fields_taxonomy', 10, 3 );
-// function json_rest_api_filter_fields_taxonomy( $data, $post, $context ) {
-// 	if ( !empty($_GET['fields']) )
-// 	{
-// 		$new_data = array();
-// 		$fields = explode(',', $_GET['fields']);
-// 		if ( empty($fields) || count($fields)==0 ) { return $data; }
-// 		foreach ($data as $key => $value) {
-// 			if (in_array($key, $fields)){$new_data[$key] = $value;}
-// 		}
-// 	}
-// 	return isset($new_data) ? $new_data : $data;
-// }
+	acf_add_options_page(array(
+		'page_title' 	=> 'Theme General Settings',
+		'menu_title'	=> 'Theme Settings',
+		'menu_slug' 	=> 'theme-general-settings',
+		'capability'	=> 'edit_posts',
+		'redirect'		=> false
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme String Settings',
+		'menu_title'	=> 'Strings',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
+	acf_add_options_sub_page(array(
+		'page_title' 	=> 'Theme Footer Settings',
+		'menu_title'	=> 'Footer',
+		'parent_slug'	=> 'theme-general-settings',
+	));
+
+}
