@@ -15,7 +15,7 @@
 
 	<footer id="colophon" class="site-footer">
 		<div class="site-footer__inner">
-			<div class="logos">
+			<div class="site-footer__logos">
 				<?php if (!empty(get_theme_mod('cslpres_footer_logo'))) : ?>
 					<a href="" class="footer__clsp-logo">
 						<img src="<?= esc_url( get_theme_mod('cslpres_footer_logo')); ?>" alt="CLSP logo">
@@ -23,7 +23,7 @@
 				<?php endif; ?>
 
 				<?php if (!empty(get_theme_mod('cslpres_footer_conu'))) : ?>
-					<a href="https://www.concordia.ca/" rel="external">
+					<a href="https://www.concordia.ca/" class="footer__conu-logo" rel="external">
 						<img src="<?= esc_url( get_theme_mod('cslpres_footer_conu')); ?>" alt="Concordia University logo">
 					</a>
 				<?php endif; ?>
