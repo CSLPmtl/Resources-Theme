@@ -8,7 +8,7 @@
             "name": "activity_meta",
             "type": "group",
             "instructions": "",
-            "required": 1,
+            "required": 0,
             "conditional_logic": 0,
             "wrapper": {
                 "width": "",
@@ -78,7 +78,7 @@
                     "key": "field_5b229f208b7ca",
                     "label": "Activity Objective",
                     "name": "activity_objective",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": 0,
@@ -88,10 +88,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": "wpautop"
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 },
                 {
                     "key": "field_5b229f388b7cd",
@@ -116,7 +116,7 @@
                     "key": "field_5b229f378b7cc",
                     "label": "Group Facilitation Tips",
                     "name": "activity_gfa",
-                    "type": "textarea",
+                    "type": "wysiwyg",
                     "instructions": "",
                     "required": 0,
                     "conditional_logic": [
@@ -134,10 +134,10 @@
                         "id": ""
                     },
                     "default_value": "",
-                    "placeholder": "",
-                    "maxlength": "",
-                    "rows": "",
-                    "new_lines": ""
+                    "tabs": "all",
+                    "toolbar": "full",
+                    "media_upload": 1,
+                    "delay": 0
                 },
                 {
                     "key": "field_5b3bc66e4a2e2",
@@ -182,7 +182,7 @@
                     "default_value": "",
                     "tabs": "all",
                     "toolbar": "basic",
-                    "media_upload": 0,
+                    "media_upload": 1,
                     "delay": 0
                 },
                 {
@@ -277,5 +277,5 @@
     ],
     "active": 1,
     "description": "Define the main and meta fields for each activity",
-    "modified": 1531419283
+    "modified": 1533050734
 }
