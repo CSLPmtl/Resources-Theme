@@ -14,9 +14,10 @@
 	&.toggled {
 		transition: transform 350ms cubic-bezier(0.0, 0.0, 0.2, 1);
 		transform: translate3D(0, 0, 0);
+		pointer-events: all;
 	}
 
-	@include media('>phone') {
+	@include media('>tablet') {
 		&.nav-up {
 			transform: translate3D(0, -150%, 0);
 		}
