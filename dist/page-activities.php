@@ -16,7 +16,10 @@ if (gethostname() == 'cslp-ga2221-mh.concordia.ca' ) {
 } else {
 	$burl = get_site_url() . '/wp-json/wp/v2/';
 } ?>
-	<script type="text/javascript">window._bURL = '<?= $burl ?>'</script>
+	<script type="text/javascript">
+		window._bURL = '<?= $burl ?>'
+		window._strings = {'noresources' : '<?= get_field('abra_no_resources_str', 'option'); ?>'}
+	</script>
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 

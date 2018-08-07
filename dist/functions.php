@@ -135,7 +135,8 @@ function cslpres_scripts() {
 	if ( is_page_template('page-activities.php') ) {
 		wp_enqueue_script( 'axios', 'https://cdnjs.cloudflare.com/ajax/libs/axios/0.18.0/axios.min.js', array(), '0.18.0', true );
 		if (CSLPRES_DEV) {
-			wp_enqueue_script( 'cslpres-activities', get_template_directory_uri() . '/assets/js/activities.js', array('axios'), '', true );
+			$now = (new \DateTime())->format('Y-m-d H:i:s');
+			wp_enqueue_script( 'cslpres-activities', get_template_directory_uri() . '/assets/js/activities.js', array('axios'), $now, true );
 		} else {
 			wp_enqueue_script( 'cslpres-activities', get_template_directory_uri() . '/assets/js/min/activities.min.js', array('axios'), CSLPRES_VER, true );
 		}
