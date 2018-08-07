@@ -84,6 +84,26 @@ function cslpres_stories_post_type () {
 }
 add_action( 'init', 'cslpres_stories_post_type' );
 
+// Add a custom taxonomy for the activities
+// Note that this is declared *before* the activities CPT so as to build the URL properly
+// tip from https://cnpagency.com/blog/the-right-way-to-do-wordpress-custom-taxonomy-rewrites/
+function cslpres_activities_categories () {
+	register_taxonomy(
+		'activity_cat',
+		'activity',
+		array(
+			'label' => __( 'Categories' ),
+			'rewrite' => array( 'slug' => 'category' ),
+			'hierarchical' => true,
+			'show_in_nav_menus' => false,
+			'show_in_rest'       => true,
+			'rest_base'          => 'activity_cat',
+			'rest_controller_class' => 'WP_REST_Terms_Controller',
+		)
+	);
+}
+add_action( 'init', 'cslpres_activities_categories' );
+
 
 // Add the activities post type
 function cslpres_activities_post_type () {
@@ -103,6 +123,7 @@ function cslpres_activities_post_type () {
 		'labels'  					=> $labels,
 		'capability_type' 	=> 'post',
 		'show_in_nav_menus' => false,
+		'rewrite'						=> array('slug' => 'teacher/abra', 'with_front' => false),
 		'menu_position'     => 10,
 		'menu_icon' 				=> 'dashicons-book-alt',
 		'taxonomies' 				=> array( 'activity_cat', 'post_tag'),
@@ -112,26 +133,6 @@ function cslpres_activities_post_type () {
 	register_post_type( 'activity', $args );
 }
 add_action( 'init', 'cslpres_activities_post_type' );
-
-
-// Add a custom taxonomy for the activities
-function cslpres_activities_categories () {
-	register_taxonomy(
-		'activity_cat',
-		'activity',
-		array(
-			'label' => __( 'Categories' ),
-			'rewrite' => array( 'slug' => 'category' ),
-			'hierarchical' => true,
-			// 'rewrite' => array( 'slug' => 'work_type' ),
-			'show_in_nav_menus' => false,
-			'show_in_rest'       => true,
-			'rest_base'          => 'activity_cat',
-			'rest_controller_class' => 'WP_REST_Terms_Controller',
-		)
-	);
-}
-add_action( 'init', 'cslpres_activities_categories' );
 
 
 // Until we start a blog
