@@ -6,9 +6,7 @@
  *
  * @package CSLP_Resources
  */
-
-get_header();
-?>
+get_header(); ?>
 
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
@@ -24,7 +22,7 @@ get_header();
 		endwhile; // End of the loop.
 		?>
 
-		</main><!-- #main -->
-	</div><!-- #primary -->
+		</main>
+	</div>
 
 <?php get_footer();
