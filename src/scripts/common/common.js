@@ -9,4 +9,9 @@
 
 	// Smoothscroll plugin
 	//const scroll = new SmoothScroll('a[href*="#"]', {header: '.site-header', speed: 1000});
+
+	// fixes 404s with pushstate on some pages. Very hack-y, but technical debt.
+  if (window.location.href.indexOf('teacher/abra/activities/') > -1) {
+  	// redirect to activities page as appropriate and route from there.
+  }
 } ());

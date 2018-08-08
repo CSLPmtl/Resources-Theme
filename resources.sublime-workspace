@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"b",
+				"bxsh\tbox-shadow: ${1:inset }${2:hoff} ${3:voff} ${4:blur} ${5:color};"
+			],
+			[
+				"dri",
+				"drillLevel"
+			],
+			[
+				"set",
+				"setSelectedCategory"
+			],
+			[
+				"group",
+				"groupEnd"
+			],
+			[
 				"for",
 				"for\tfor (…) {…} (Improved Native For-Loop)"
 			],
@@ -30,10 +46,6 @@
 			[
 				"se",
 				"selector"
-			],
-			[
-				"dri",
-				"drilldown"
 			],
 			[
 				"activit",
@@ -154,10 +166,6 @@
 			[
 				"fun",
 				"function"
-			],
-			[
-				"set",
-				"setThemeDOM"
 			],
 			[
 				"the",
@@ -569,6 +577,40 @@
 	],
 	"file_history":
 	[
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/router.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/state.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/cat.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/helpers.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_404.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/404.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/activities.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/activity.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/template-parts/content.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/_layout.scss",
+		"/Volumes/cslp/wp-content/themes/cslpres/assets/js/min/activities.min.js",
+		"/Volumes/cslp/wp-content/themes/cslpres/assets/js/activities.js",
+		"/Users/mheming/Downloads/Fw%3a_Data 2/Kisaunilocalhost.sql",
+		"/Users/mheming/Downloads/Fw%3a_Data 2/Bamburi.sql",
+		"/Users/mheming/Downloads/Fw%3a_Data 2/Burhaniya.sql",
+		"/Users/mheming/Downloads/Fw%3a_Data 2/StAugustine.sql",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/parts/_footer.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/navigation/_menus.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/template-parts/_the_nav.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/navigation/_toggle.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/footer.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/common/common.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/util/_animation.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/typography/_copy.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_activities.scss",
+		"/Volumes/cslp/wp-content/themes/cslpres/style.css",
+		"/Volumes/cslp/wp-content/themes/cslpres_005/style.css",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/inc/post-types.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/page-activities.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/inc/template-functions.php",
+		"/Users/mheming/Downloads/acf-to-rest-api/v3/lib/class-acf-to-rest-api-acf-api.php",
+		"/Users/mheming/Downloads/acf-to-rest-api/v3/class-acf-to-rest-api-v3.php",
+		"/Users/mheming/Downloads/acf-to-rest-api/class-acf-to-rest-api.php",
 		"/Users/mheming/Desktop/Resources Theme/src/scripts/activities/util/activity.js",
 		"/Users/mheming/Desktop/Resources Theme/src/scripts/activities/activities.js",
 		"/Users/mheming/Desktop/Resources Theme/src/scripts/activities/util/cat.js",
@@ -586,7 +628,6 @@
 		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/template-parts/content-page-stories.php",
 		"/Users/mheming/Desktop/Resources Theme/src/scss/layout/singletons/_stories.scss",
 		"/Users/mheming/Desktop/Resources Theme/src/scripts/activities/util/stories.js",
-		"/Volumes/cslp/wp-content/themes/cslpres/style.css",
 		"/Users/mheming/Desktop/Resources Theme/src/scss/navigation/_links.scss",
 		"/Volumes/cslp/wp-content/themes/cslpres/template-parts/content-page-activities.php",
 		"/Volumes/cslp/.htaccess",
@@ -663,44 +704,11 @@
 		"/Users/mheming/Desktop/Resources Theme/theme/page.php",
 		"/Users/mheming/Desktop/Resources Theme/theme/search.php",
 		"/Users/mheming/Desktop/Resources Theme/theme/page-stories.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/index.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/functions.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/template-parts/content-search.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/template-parts/content.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/single.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/inc/cleanup.php",
-		"/Users/mheming/Desktop/Resources Theme/src/stories.js",
-		"/Users/mheming/Desktop/Resources Theme/theme/inc/admin-interface.php",
-		"/Users/mheming/Desktop/Resources Theme/scss/login.scss",
-		"/Users/mheming/Desktop/Resources Theme/FPPSE/theme/inc/cleanup.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/inc/template-tags.php",
-		"/Users/mheming/Downloads/Salvage/page-list.php",
-		"/Users/mheming/Desktop/Resources Theme/scss/elements/media/_galleries.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/elements/media/_captions.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/elements/_elements.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/elements/media/_media.scss",
-		"/Users/mheming/Desktop/Resources Theme/theme/front-page.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/template-parts/content-page-th.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/page-tool-home.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/header.php",
-		"/Users/mheming/Desktop/Resources Theme/scss/variables/_sizes.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/variables/_ui.scss",
-		"/Users/mheming/Downloads/Salvage/header.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/inc/post-types.php",
-		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/template-parts/content-page-tool-home.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/footer.php",
-		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/inc/admin-interface.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/inc/customizer.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/assets/js/customizer.js",
-		"/Users/mheming/Desktop/Resources Theme/theme/inc/plugins.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/inc/template-functions.php",
-		"/Users/mheming/Desktop/Resources Theme/scss/editor-style.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/layout/singletons/_homepage.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/layout/parts/_article.scss"
+		"/Users/mheming/Desktop/Resources Theme/theme/index.php"
 	],
 	"find":
 	{
-		"height": 54.0
+		"height": 27.0
 	},
 	"find_in_files":
 	{
@@ -719,6 +727,11 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"&activity_cat=",
+			"category-card",
+			"&activity_cat=",
+			"category-card",
+			"category-card ",
 			"php",
 			"activity__nav",
 			"document.getElementById('",
@@ -757,7 +770,7 @@
 			" debug",
 			"hoek"
 		],
-		"highlight": true,
+		"highlight": false,
 		"in_selection": false,
 		"preserve_case": false,
 		"regex": false,
@@ -794,7 +807,7 @@
 	],
 	"incremental_find":
 	{
-		"height": 26.0
+		"height": 27.0
 	},
 	"input":
 	{
@@ -820,7 +833,7 @@
 		"cols":
 		[
 			0.0,
-			0.532208093477,
+			0.481819154403,
 			1.0
 		],
 		"rows":
@@ -850,7 +863,7 @@
 	"project": "resources.sublime-project",
 	"replace":
 	{
-		"height": 48.0
+		"height": 50.0
 	},
 	"save_all_on_build": true,
 	"select_file":
@@ -892,8 +905,8 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 243.0,
-	"status_bar_visible": false,
+	"side_bar_width": 240.0,
+	"status_bar_visible": true,
 	"template_settings":
 	{
 	}
