@@ -59,7 +59,7 @@ config.scripts.forEach(script => {
 			.pipe(gulp.dest('dist/assets/js/')) // pipe to repo
 			.pipe(rename(script.name + '.min.js'))
 			.pipe(buffer())
-			.pipe(uglify())
+			.pipe(uglify().on('error', logError))
 			.on('error', logError)
 		// .pipe(sourcemaps.write())
 

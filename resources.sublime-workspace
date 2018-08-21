@@ -4,6 +4,22 @@
 		"selected_items":
 		[
 			[
+				"pac",
+				"package\t@package"
+			],
+			[
+				"get_templ",
+				"get_template_directory_uri"
+			],
+			[
+				"sublime",
+				"sublime-project"
+			],
+			[
+				"l",
+				"lin\tCSS - line-height: 1.5;"
+			],
+			[
 				"b",
 				"bxsh\tbox-shadow: ${1:inset }${2:hoff} ${3:voff} ${4:blur} ${5:color};"
 			],
@@ -574,35 +590,61 @@
 	},
 	"expanded_folders":
 	[
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/assets",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/assets/js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/assets/js/min"
 	],
 	"file_history":
 	[
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/navigation/_links.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/template-parts/nav.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/gulpfile.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/typography/_headings.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/navigation/_navigation.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/navigation/_toggle.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/base/_base.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/elements/forms/_buttons.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/parts/_footer.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/parts/_article.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/_layout.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/tool/_tool.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/tool/_tool-home.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_abra-mdl-c.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_stories.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_homepage.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_activities.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/inc/customizer.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions/admin-setup.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions/theme-scripts.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/archive.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/footer.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/404.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/header.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/single.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/index.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/.gitignore",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/router.js",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/state.js",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/cat.js",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/helpers.js",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions.php",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_404.scss",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/404.php",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/activities.js",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/activity.js",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/template-parts/content.php",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/_layout.scss",
 		"/Volumes/cslp/wp-content/themes/cslpres/assets/js/min/activities.min.js",
 		"/Volumes/cslp/wp-content/themes/cslpres/assets/js/activities.js",
 		"/Users/mheming/Downloads/Fw%3a_Data 2/Kisaunilocalhost.sql",
 		"/Users/mheming/Downloads/Fw%3a_Data 2/Bamburi.sql",
 		"/Users/mheming/Downloads/Fw%3a_Data 2/Burhaniya.sql",
 		"/Users/mheming/Downloads/Fw%3a_Data 2/StAugustine.sql",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/parts/_footer.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/navigation/_menus.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/template-parts/_the_nav.php",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/navigation/_toggle.scss",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/footer.php",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/common/common.js",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/util/_animation.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/typography/_copy.scss",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_activities.scss",
 		"/Volumes/cslp/wp-content/themes/cslpres/style.css",
 		"/Volumes/cslp/wp-content/themes/cslpres_005/style.css",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/inc/post-types.php",
@@ -683,32 +725,11 @@
 		"/Users/mheming/Desktop/Resources Theme/stories/util/cat.js",
 		"/Users/mheming/Desktop/Resources Theme/stories/util/theme.js",
 		"/Users/mheming/Desktop/Resources Theme/scss/navigation/_links.scss",
-		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/template-parts/content-page.php",
-		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/template-parts/_the_nav.php",
-		"/Users/mheming/Desktop/Resources Theme/stories/main.js",
-		"/Users/mheming/Desktop/Resources Theme/scss/navigation/_navigation.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/navigation/_toggle.scss",
-		"/Volumes/Michael Hemingway's Public Folder/resources/wp-config.php",
-		"/Users/mheming/Desktop/Resources Theme/stories/util/definitions.js",
-		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/assets/js/stories.js",
-		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/front-page.php",
-		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/inc/template-functions.php",
-		"/Volumes/Michael Hemingway's Public Folder/resources/.htaccess",
-		"/Users/mheming/Library/Application Support/Sublime Text 3/Packages/User/Colorsublime.sublime-settings",
-		"/Users/mheming/Library/Application Support/Sublime Text 3/Packages/Colorsublime/Colorsublime.sublime-settings",
-		"/Users/mheming/Desktop/Resources Theme/theme/assets/js/stories.js",
-		"/Users/mheming/Desktop/Resources Theme/scss/elements/forms/_buttons.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/mixins/_toggles.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/mixins/_mixins.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/mixins/toggles.scss",
-		"/Users/mheming/Desktop/Resources Theme/theme/page.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/search.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/page-stories.php",
-		"/Users/mheming/Desktop/Resources Theme/theme/index.php"
+		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/template-parts/content-page.php"
 	],
 	"find":
 	{
-		"height": 27.0
+		"height": 54.0
 	},
 	"find_in_files":
 	{
@@ -727,6 +748,7 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"axios",
 			"&activity_cat=",
 			"category-card",
 			"&activity_cat=",
@@ -798,11 +820,6 @@
 			"sheets":
 			[
 			]
-		},
-		{
-			"sheets":
-			[
-			]
 		}
 	],
 	"incremental_find":
@@ -811,7 +828,7 @@
 	},
 	"input":
 	{
-		"height": 48.0
+		"height": 49.0
 	},
 	"layout":
 	{
@@ -822,18 +839,11 @@
 				0,
 				1,
 				1
-			],
-			[
-				1,
-				0,
-				2,
-				1
 			]
 		],
 		"cols":
 		[
 			0.0,
-			0.481819154403,
 			1.0
 		],
 		"rows":
@@ -905,7 +915,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 240.0,
+	"side_bar_width": 205.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

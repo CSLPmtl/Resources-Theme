@@ -47,7 +47,7 @@ html {
 
 body {
 	font-size: 62.5%;
-	background: $c__background-body; /* Fallback for when there is no custom background color defined. */
+	background: $c__background-body;
 	flex-direction: column;
 	-webkit-font-smoothing: antialiased;
 	text-rendering: optimizeLegibility;

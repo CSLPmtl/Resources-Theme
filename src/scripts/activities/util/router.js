@@ -1,26 +1,29 @@
 import hasher from 'hasher'
 import $ from 'balajs'
-const anime = require('animejs')
+import anime from 'animejs'
 
 export default class Router {
 	constructor () {
 		// add hash change listener
 		hasher.changed.add(this.handleHashChange)
-		// add initialized listener (to grab initial value in case it is already set)
+
+		// add initialized listener
+		// (to grab initial value in case it is already set)
 		hasher.initialized.add(this.handleHashChange)
+
 		// initialize hasher (start listening for history changes)
 		hasher.init()
 	}
 
-	navigate () {
-		let hashtring = 'foo'
+	navigate (path) {
+		let hashtring = path
 
 		// change hash value (generates new history record)
 		hasher.setHash(hashtring)
 	}
 
 	handleHashChange (newHash, oldHash) {
-		console.log('%c newhash: ' + newHash, 'background: blue')
+		console.log('%c New hash: ' + newHash, 'background: blue')
 	}
 
 	goto (level, dir) {
@@ -80,6 +83,7 @@ export default class Router {
   					}
 					})
 				} else {
+					this.navigate('activity')
 					anime({
 						targets: '.activities-meta p',
 						opacity: [1, 0],

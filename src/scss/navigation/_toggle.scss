@@ -29,18 +29,6 @@
 		  width: 100%;
 		}
 	}
-	// &:after {
-	// 	content: "";
-	// 	display: block;
-	// 	position: absolute;
-	// 	top: -15px;
-	// 	left: -15px;
-	// 	right: -15px;
-	// 	bottom: -15px;
-	// 	border-radius: 50%;
-	// 	z-index: -1;
-	// 	transition: all .3s;
-	// }
 }
 
 @include media('>tablet') {
