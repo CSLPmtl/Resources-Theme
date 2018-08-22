@@ -48,7 +48,8 @@
   "babel": {
     "presets": [
       [
-        "env", {
+        "env",
+        {
           "targets": {
             "uglify": true,
             "browsers": [
@@ -56,7 +57,9 @@
             ]
           },
           "production": {
-            "plugins": ["transform-remove-console"]
+            "plugins": [
+              "transform-remove-console"
+            ]
           }
         }
       ]
