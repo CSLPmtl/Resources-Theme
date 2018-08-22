@@ -25,6 +25,8 @@ if ( ! function_exists( 'cslpres_setup' ) ) :
 		register_nav_menus( array(
 			'menu-global' => esc_html__( 'Global Menu', 'cslpres' ),
 			'menu-tools'  => esc_html__( 'All tools', 'cslpres' ),
+			'menu-ABRAT'  => esc_html__( 'ABRA Teacher', 'cslpres' ),
+			'menu-ABRAP'  => esc_html__( 'ABRA Parent', 'cslpres' ),
 			'menu-links'  => esc_html__( 'Useful Links', 'cslpres' ),
 			'menu-footer' => esc_html__( 'Footer', 'cslpres' ),
 			'menu-local'  => esc_html__( 'Local', 'cslpres' ),

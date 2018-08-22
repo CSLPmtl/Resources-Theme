@@ -15,7 +15,7 @@ function cslpres_scripts() {
 	wp_enqueue_script( 'smoothscroll', 'https://cdn.jsdelivr.net/gh/cferdinandi/smooth-scroll@14/dist/smooth-scroll.polyfills.min.js', array(), false, true );
 
 	// Utils
-	wp_enqueue_script( 'cslp-lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.core.min.js', array(), false, true );
+	//wp_enqueue_script( 'cslp-lodash', 'https://cdnjs.cloudflare.com/ajax/libs/lodash.js/4.17.10/lodash.core.min.js', array(), false, true );
 
 	// site logic
 	if (CSLPRES_DEV) {

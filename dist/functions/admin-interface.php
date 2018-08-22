@@ -68,6 +68,8 @@ add_action( 'admin_head', 'font_awesome_icons', 10, 1 );
 
 // Add a login stylesheet
 function fppse_login_stylesheet() {
-    wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/assets/css/login.css' );
+	wp_enqueue_style( 'custom-login', get_stylesheet_directory_uri() . '/assets/css/login.css' );
 }
 add_action( 'login_enqueue_scripts', 'fppse_login_stylesheet' );
+
+// add_filter('show_admin_bar', '__return_false');

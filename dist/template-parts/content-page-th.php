@@ -71,6 +71,10 @@
 	</div>
 </section>
 
+<section>
+	<?php the_content(); ?>
+</section>
+
 <?php
 if ( have_rows('th_content') ) {
 	$index = 0;

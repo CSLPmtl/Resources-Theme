@@ -16,7 +16,7 @@ export default function setDOM (state) {
 	// set async
 	setTimeout(
 		activity.getRelatedStories('activity?per_page=100&activity_cat=' + cat.id, stories => {
-			console.group('%c Related Stories for ID #' + cat.id, 'color: #F75C03')
+			console.groupCollapsed('%c Related Stories for ID #' + cat.id, 'color: #F75C03')
 			console.info('Stories: ', stories)
 
 			const list = $('#cat-meta__list')[0]
@@ -36,7 +36,7 @@ export default function setDOM (state) {
 				list.appendChild(el)
 
 				el.addEventListener('click', () => {
-					state.drillTo(2)
+					state.routeTo({level: 2, activity: s.slug})
 
 					state.mutate({activityData: s})
 

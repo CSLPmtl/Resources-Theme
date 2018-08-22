@@ -5,14 +5,21 @@
 
 'use strict';
 
-import { h, mount, patch } from 'petit-dom' // Virtual DOM
-import $ from 'balajs' // DOM selector engine
+import Vue from 'vue'
+import VueRouter from 'vue-router'
 
 import { api as axios, cache } from './util/config.js'
 
 import state from './util/state.js' // App state and routing
 import { on } from './util/helpers.js' // Helpers
 import categ from './components/cat.js' // App components
+
+
+Vue.use(VueRouter)
+
+const app = new Vue({
+  router
+}).$mount('#main')
 
 // DOM
 const container = $.one('#activities__by-cat')
@@ -45,14 +52,17 @@ function init () {
 	})
 
 	on('click', $.one('#back-button'), () => {
-		state.drillTo(state.get('drill').level - 1)
+		let route = {
+			level: state.get('route').level - 1
+		}
+		state.routeTo(route)
 	})
 }
 on('DOMContentLoaded', window, init())
 
 // select
 function setSelectedCategory(data) {
-	state.drillTo(1)
+	state.routeTo({level:1,category:data.slug})
 	$.one('.activities-meta').style = 'visibility: hidden'
 	state.mutate({categoryData: data})
 	categ(state)

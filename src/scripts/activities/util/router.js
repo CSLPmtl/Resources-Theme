@@ -15,11 +15,17 @@ export default class Router {
 		hasher.init()
 	}
 
-	navigate (path) {
-		let hashtring = path
+	navigate (route) {
+		let hashString = ''
+
+		switch (route.level) {
+			case 0: break;
+			case 1: hashString += route.category; break;
+			case 2: hashString += route.category + '/' + route.activity; break;
+		}
 
 		// change hash value (generates new history record)
-		hasher.setHash(hashtring)
+		hasher.setHash(hashString)
 	}
 
 	handleHashChange (newHash, oldHash) {

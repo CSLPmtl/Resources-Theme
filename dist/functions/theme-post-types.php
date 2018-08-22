@@ -24,6 +24,7 @@ function cslpres_parent_page_init () {
 		'hierarchical'       => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
+		'show_in_rest'			 => true,
 		'has_archive'        => false,
 		'capability_type'    => 'page',
 		'menu_position'      => 20,
@@ -56,6 +57,7 @@ function cslpres_teacher_post_type () {
 		'hierarchical'       => true,
 		'show_ui'            => true,
 		'show_in_menu'       => true,
+		'show_in_rest'			 => true,
 		'has_archive'        => false,
 		'capability_type'    => 'page',
 		'menu_position'      => 20,
@@ -75,6 +77,7 @@ function cslpres_stories_post_type () {
 		'label'  						=> 'Stories',
 		'capability_type' 	=> 'post',
 		'menu_position'     => 10,
+		'show_in_rest'			=> true,
 		'show_in_nav_menus' => false,
 		'menu_icon' 				=> 'dashicons-format-aside',
 		'taxonomies' 				=> array('category', 'post_tag'),
@@ -125,6 +128,7 @@ function cslpres_activities_post_type () {
 		'show_in_nav_menus' => false,
 		'rewrite'						=> array('slug' => 'teacher/abra', 'with_front' => false),
 		'menu_position'     => 10,
+		'show_in_rest'			=> true,
 		'menu_icon' 				=> 'dashicons-book-alt',
 		'taxonomies' 				=> array( 'activity_cat', 'post_tag'),
 		'supports'					=> array( 'title', 'editor', 'thumbnail', 'revisions'),
@@ -137,6 +141,23 @@ add_action( 'init', 'cslpres_activities_post_type' );
 
 // Until we start a blog
 function remove_posts_menu() {
-		remove_menu_page('edit.php');
+	remove_menu_page('edit.php');
 }
 add_action('admin_menu', 'remove_posts_menu');
+
+
+/**
+* Add REST API support to an already registered post type.
+*/
+add_action( 'init', 'my_custom_post_type_rest_support', 25 );
+function my_custom_post_type_rest_support() {
+	global $wp_post_types;
+
+	//be sure to set this to the name of your post type!
+	$post_type_name = 'parentpage';
+	if( isset( $wp_post_types[ $post_type_name ] ) ) {
+		$wp_post_types[$post_type_name]->show_in_rest = true;
+		$wp_post_types[$post_type_name]->rest_base = $post_type_name;
+		$wp_post_types[$post_type_name]->rest_controller_class = 'WP_REST_Posts_Controller';
+	}
+}

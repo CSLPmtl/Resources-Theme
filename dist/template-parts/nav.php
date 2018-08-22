@@ -12,9 +12,29 @@
 		</a>
 
 		<?php // a lot was removed temporarily. Rethink menu
+		$pt = get_post_type();
+		$suffix = '';
+		$menu = 'menu-';
+		if ($pt == 'teacherpage') { $suffix = 'T'; }
+		if ($pt == 'parentpage') { $suffix = 'P'; }
+
+
+		switch (get_field('tool')) {
+			case 'abra':
+				$menu = $menu . 'ABRA' . $suffix;
+				break;
+
+			case 'epearl':
+				$menu = $menu . 'EPEARL' . $suffix;
+				break;
+
+			default:
+				# code...
+				break;
+		}
 		wp_nav_menu( array(
-			'theme_location' => 'menu-tools',
-			'menu_id'        => 'nav__tools-menu'
+			'theme_location' => $menu,
+			'menu_id' => 'nav__tools-menu'
 		) );
 		?>
 

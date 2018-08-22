@@ -4,6 +4,38 @@
 		"selected_items":
 		[
 			[
+				"require",
+				"require_once"
+			],
+			[
+				"incl",
+				"include\t@include"
+			],
+			[
+				"f",
+				"function"
+			],
+			[
+				"fn",
+				"fn\tFunction"
+			],
+			[
+				"re",
+				"retrieve"
+			],
+			[
+				"cha",
+				"cachemiss"
+			],
+			[
+				"ax",
+				"axiosBURL"
+			],
+			[
+				"ca",
+				"cachemiss"
+			],
+			[
 				"pac",
 				"package\t@package"
 			],
@@ -166,10 +198,6 @@
 			[
 				"do",
 				"document"
-			],
-			[
-				"ca",
-				"callback"
 			],
 			[
 				"con",
@@ -486,39 +514,38 @@
 			[
 				"sel",
 				"selected"
-			],
-			[
-				"hot",
-				"hosts"
-			],
-			[
-				"if",
-				"if\tif"
-			],
-			[
-				"r",
-				"rArrow"
-			],
-			[
-				"DEV",
-				"DEV_PAGE"
-			],
-			[
-				"sPa",
-				"sPage"
-			],
-			[
-				"test",
-				"testPage"
-			],
-			[
-				"re",
-				"req\trequire"
 			]
 		]
 	},
 	"buffers":
 	[
+		{
+			"file": "src/scripts/activities/activities.js",
+			"settings":
+			{
+				"buffer_size": 1663,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/scss/layout/singletons/_activities.scss",
+			"settings":
+			{
+				"buffer_size": 3788,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		},
+		{
+			"file": "src/scripts/activities/components/cat.js",
+			"settings":
+			{
+				"buffer_size": 1423,
+				"encoding": "UTF-8",
+				"line_ending": "Unix"
+			}
+		}
 	],
 	"build_system": "",
 	"build_system_choices":
@@ -532,6 +559,14 @@
 		"selected_items":
 		[
 			[
+				"ins",
+				"Package Control: Install Package"
+			],
+			[
+				"re",
+				"Package Control: Remove Package"
+			],
+			[
 				"inst",
 				"Package Control: Install Package"
 			],
@@ -542,10 +577,6 @@
 			[
 				"remo",
 				"Package Control: Remove Package"
-			],
-			[
-				"ins",
-				"Package Control: Install Package"
 			],
 			[
 				"remove",
@@ -590,48 +621,57 @@
 	},
 	"expanded_folders":
 	[
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/dist",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/assets",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/assets/js",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/assets/js/min"
 	],
 	"file_history":
 	[
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/navigation/_links.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/state.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/router.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_activities.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_abra-mdl-c.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_stories.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions/theme-scripts.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/parts/_article.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/header.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions/theme-post-types.php",
+		"/Applications/MAMP/htdocs/resources/wp-content/themes/atomic-blocks/functions.php",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/template-parts/nav.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions/admin-interface.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/tool/_tool.scss",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/template-parts/content-page-th.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions/theme-plugins.php",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions/admin-setup.php",
+		"/Users/mheming/Library/Application Support/Sublime Text 3/Packages/ESLint/ESLint.sublime-settings",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/style.css",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/components/activity.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/config.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/components/cat.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/activities.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/helpers.js",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/gulpfile.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/package.json",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/config.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/cat.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/state.js",
+		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/navigation/_links.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/typography/_headings.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/navigation/_navigation.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/navigation/_toggle.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/base/_base.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/elements/forms/_buttons.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/parts/_footer.scss",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/parts/_article.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/_layout.scss",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/tool/_tool.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/tool/_tool-home.scss",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_abra-mdl-c.scss",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_stories.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_homepage.scss",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_activities.scss",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/inc/customizer.php",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions.php",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions/admin-setup.php",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/functions/theme-scripts.php",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/archive.php",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/footer.php",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/404.php",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/header.php",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/single.php",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/index.php",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/.gitignore",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/router.js",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/state.js",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/cat.js",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/helpers.js",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scss/layout/singletons/_404.scss",
-		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/activities.js",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/src/scripts/activities/util/activity.js",
 		"/Users/mheming/Documents/GitHub/Resources-Theme/dist/template-parts/content.php",
 		"/Volumes/cslp/wp-content/themes/cslpres/assets/js/min/activities.min.js",
@@ -711,21 +751,7 @@
 		"/Users/mheming/Desktop/Resources Theme/src/animation.js",
 		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/template-parts/content-none.php",
 		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/header.php",
-		"/Users/mheming/Desktop/Resources Theme/src/app.js",
-		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/404.php",
-		"/Users/mheming/Desktop/Resources Theme/scss/layout/_layout.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/typography/_copy.scss",
-		"/Users/mheming/Desktop/Resources Theme/stories/stories.js",
-		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/assets/js/stories.min.js",
-		"/Users/mheming/Desktop/Resources Theme/scss/layout/singletons/_stories.scss",
-		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/template-parts/content.php",
-		"/Users/mheming/Desktop/Resources Theme/scss/typography/_headings.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/layout/parts/_footer.scss",
-		"/Users/mheming/Desktop/Resources Theme/scss/base/_base.scss",
-		"/Users/mheming/Desktop/Resources Theme/stories/util/cat.js",
-		"/Users/mheming/Desktop/Resources Theme/stories/util/theme.js",
-		"/Users/mheming/Desktop/Resources Theme/scss/navigation/_links.scss",
-		"/Volumes/Michael Hemingway's Public Folder/resources/wp-content/themes/theme/template-parts/content-page.php"
+		"/Users/mheming/Desktop/Resources Theme/src/app.js"
 	],
 	"find":
 	{
@@ -748,6 +774,8 @@
 		"case_sensitive": false,
 		"find_history":
 		[
+			"drill",
+			"activity-item",
 			"axios",
 			"&activity_cat=",
 			"category-card",
@@ -798,6 +826,7 @@
 		"regex": false,
 		"replace_history":
 		[
+			"route",
 			"$('#",
 			"activity",
 			"activities",
@@ -817,8 +846,277 @@
 	"groups":
 	[
 		{
+			"selected": 1,
 			"sheets":
 			[
+				{
+					"buffer": 0,
+					"file": "src/scripts/activities/activities.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1663,
+						"regions":
+						{
+						},
+						"selection":
+						[
+							[
+								428,
+								428
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 1,
+					"type": "text"
+				},
+				{
+					"buffer": 1,
+					"file": "src/scss/layout/singletons/_activities.scss",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 3788,
+						"regions":
+						{
+							"col_00000007":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										2978,
+										2994
+									]
+								],
+								"scope": "col_00000007"
+							},
+							"col_00000007_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_00000007_circle.png",
+								"regions":
+								[
+									[
+										2946,
+										2946
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_00000014":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										3044,
+										3060
+									]
+								],
+								"scope": "col_00000014"
+							},
+							"col_00000014_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_00000014_circle.png",
+								"regions":
+								[
+									[
+										3011,
+										3011
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_111111FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										2127,
+										2131
+									]
+								],
+								"scope": "col_111111FF"
+							},
+							"col_111111FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_111111FF_circle.png",
+								"regions":
+								[
+									[
+										2115,
+										2115
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_BBBBBBFF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										90,
+										94
+									]
+								],
+								"scope": "col_BBBBBBFF"
+							},
+							"col_BBBBBBFF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_BBBBBBFF_circle.png",
+								"regions":
+								[
+									[
+										78,
+										78
+									]
+								],
+								"scope": "col_gutter"
+							},
+							"col_FFFFFFFF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										429,
+										434
+									],
+									[
+										560,
+										565
+									],
+									[
+										1294,
+										1299
+									],
+									[
+										1642,
+										1647
+									],
+									[
+										2059,
+										2064
+									]
+								],
+								"scope": "col_FFFFFFFF"
+							},
+							"col_FFFFFFFF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_FFFFFFFF_circle.png",
+								"regions":
+								[
+									[
+										416,
+										416
+									],
+									[
+										546,
+										546
+									],
+									[
+										1278,
+										1278
+									],
+									[
+										1613,
+										1613
+									],
+									[
+										2029,
+										2029
+									]
+								],
+								"scope": "col_gutter"
+							}
+						},
+						"selection":
+						[
+							[
+								545,
+								545
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Sass/Syntaxes/SCSS.sublime-syntax"
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 0,
+					"type": "text"
+				},
+				{
+					"buffer": 2,
+					"file": "src/scripts/activities/components/cat.js",
+					"semi_transient": false,
+					"settings":
+					{
+						"buffer_size": 1423,
+						"regions":
+						{
+							"col_F75C03FF":
+							{
+								"flags": 16,
+								"regions":
+								[
+									[
+										621,
+										628
+									]
+								],
+								"scope": "col_F75C03FF"
+							},
+							"col_F75C03FF_icon":
+							{
+								"flags": 16,
+								"icon": "Packages/User/Color Highlight.cache/col_F75C03FF_circle.png",
+								"regions":
+								[
+									[
+										547,
+										547
+									]
+								],
+								"scope": "col_gutter"
+							}
+						},
+						"selection":
+						[
+							[
+								1203,
+								1203
+							]
+						],
+						"settings":
+						{
+							"syntax": "Packages/Babel/JavaScript (Babel).sublime-syntax",
+							"translate_tabs_to_spaces": false
+						},
+						"translation.x": 0.0,
+						"translation.y": 0.0,
+						"zoom_level": 1.0
+					},
+					"stack_index": 2,
+					"type": "text"
+				}
 			]
 		}
 	],
@@ -858,6 +1156,10 @@
 		"height": 0.0
 	},
 	"output.SublimeLinter Messages":
+	{
+		"height": 126.0
+	},
+	"output.exec":
 	{
 		"height": 126.0
 	},
@@ -915,7 +1217,7 @@
 	"show_open_files": false,
 	"show_tabs": true,
 	"side_bar_visible": true,
-	"side_bar_width": 205.0,
+	"side_bar_width": 217.0,
 	"status_bar_visible": true,
 	"template_settings":
 	{

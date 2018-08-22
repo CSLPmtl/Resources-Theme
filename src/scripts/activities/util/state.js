@@ -5,8 +5,11 @@ const router = new Router()
 const state = {
 
 	store: {
-		drill:  {
-			level : 0
+		route:  {
+			level : 0,
+			activity : null,
+			category : null,
+			activityTab : null
 		},
 		categoryData : {},
 		activityData : {}
@@ -15,7 +18,9 @@ const state = {
 	mutate: function (props) {
 		// todo: validate props
 		this.set(props)
-		console.log('%c Datastore: ', 'background: orange; color: black', this.store)
+		console.groupCollapsed('%c Datastore ', 'background: orange; color: black')
+		console.log(this.store)
+		console.groupEnd()
 	},
 
 	set: function (props) {
@@ -33,10 +38,12 @@ const state = {
 	},
 
 	// takes an int and sets
-	drillTo: function (level) {
-		let direction = (this.store.drill.level > level) ? '' : 'reverse'
-		this.store.drill.level = level
-		router.goto(level, direction)
+	routeTo: function (r) {
+		let direction = (this.store.route.level >= r.level) ? '' : 'reverse'
+		this.store.route = Object.assign(this.store.route, r)
+		console.log(this.store.route)
+		router.navigate(this.store.route)
+		router.goto(r.level, direction)
 	},
 
 	getBreadcrumb: function () {
@@ -45,7 +52,7 @@ const state = {
 
 		// breaks intentionally ommited for smart follow-through
 		// depending on level, the string will update relevant parts
-		switch (this.store.drill.level) {
+		switch (this.store.route.level) {
 			case 0:
 				return null
 				break;
@@ -59,7 +66,7 @@ const state = {
 	}
 
 
-	// backone () { this.setDrillLevel(this.drillLevel - 1) }
+	// backone () { this.setrouteLevel(this.routeLevel - 1) }
 }
 
 export default state
