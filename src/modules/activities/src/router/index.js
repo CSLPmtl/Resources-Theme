@@ -1,21 +1,15 @@
-import Vue from 'vue';
-import Router from 'vue-router';
-import HelloWorld from '@/components/HelloWorld';
-import Testaroni from '@/components/testaroni';
+import Vue from 'vue'
+import Router from 'vue-router'
+import Categories from '@/components/Categories'
 
-Vue.use(Router);
+Vue.use(Router)
 
 export default new Router({
   routes: [
     {
       path: '/',
-      name: 'HelloWorld',
-      component: HelloWorld,
-    },
-    {
-      path: '/testaroni',
-      name: 'testaroni',
-      component: Testaroni,
+      name: 'Categories',
+      component: Categories,
     },
   ],
-});
+})
