@@ -5,21 +5,11 @@
 
 'use strict';
 
-import Vue from 'vue'
-import VueRouter from 'vue-router'
-
 import { api as axios, cache } from './util/config.js'
 
 import state from './util/state.js' // App state and routing
 import { on } from './util/helpers.js' // Helpers
 import categ from './components/cat.js' // App components
-
-
-Vue.use(VueRouter)
-
-const app = new Vue({
-  router
-}).$mount('#main')
 
 // DOM
 const container = $.one('#activities__by-cat')
