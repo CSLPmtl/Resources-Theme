@@ -62,3 +62,5 @@ GitHub.sublime-settings
 *.sublime-project
 *.sublime-workspace
 *.map
+dist/assets/js/modules/activities/
+
