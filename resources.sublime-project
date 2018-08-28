@@ -9,6 +9,12 @@
 		},
 		{
 			"path": "dist"
+		},
+		{
+			"path": "src/modules/activities"
+		},
+		{
+			"path": "src/modules/activities/src"
 		}
 	]
 }
