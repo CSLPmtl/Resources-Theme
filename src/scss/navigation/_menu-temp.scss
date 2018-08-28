@@ -40,6 +40,7 @@
 			ul {
 				padding: 0;
 				list-style: none;
+				display: flex;
 
 				li span { // nav hints
 					font-family: $font__code;
