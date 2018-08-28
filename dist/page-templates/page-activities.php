@@ -14,7 +14,7 @@ get_header();
 if (gethostname() == 'cslp-ga2221-mh.concordia.ca' ) {
 	$burl = 'http://doe.concordia.ca/cslp/wp-json/wp/v2/';
 } else {
-	$burl = get_site_url() . '/wp-json/wp/v2/';
+	$burl = 'http://localhost:8888/resources/wp-json/wp/v2/';
 } ?>
 	<script type="text/javascript">
 		window._bURL = '<?= $burl ?>'
@@ -24,13 +24,13 @@ if (gethostname() == 'cslp-ga2221-mh.concordia.ca' ) {
 		<main id="main" class="site-main">
 
 		<?php
-		while ( have_posts() ) :
-			the_post();
+		// while ( have_posts() ) :
+		// 	the_post();
 
-			get_template_part( 'template-parts/content', 'page-activities' );
+		// 	get_template_part( 'template-parts/content', 'page-activities' );
 
 
-		endwhile; // End of the loop.
+		// endwhile; // End of the loop.
 		?>
 
 		</main><!-- #main -->
