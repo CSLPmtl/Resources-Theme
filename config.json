@@ -1,7 +1,7 @@
 {
 	"paths" : {
 		"domain" :			"http://localhost:8888/resources/",
-		"theme" :				"theme/",
+		"theme" :				"dist/",
 		"jsBase" :			"src/scripts/",
 		"styles" :			"src/scss/**/*.scss",
 		"jsBuild" :			"assets/js/",
@@ -28,10 +28,6 @@
 		"name": "stories",
 		"main": "stories/stories.js",
 		"glob": ["stories/**/*.js"]
-	},{
-		"name": "activities",
-		"main": "activities/activities.js",
-		"glob": ["activities/**/*.js"]
 	}],
 
 	"tools": {
