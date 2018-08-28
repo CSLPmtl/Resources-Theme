@@ -40,6 +40,10 @@ module.exports = {
         'e' // for e.returnvalue
       ]
     }],
+    // my vars
+    'semi' : [ 'error', 'never'],
+    'no-console': ['off'],
+    'arrow-parens': ['off'],
     // allow optionalDependencies
     'import/no-extraneous-dependencies': ['error', {
       optionalDependencies: ['test/unit/index.js']
