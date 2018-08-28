@@ -23,15 +23,28 @@ if (gethostname() == 'cslp-ga2221-mh.concordia.ca' ) {
 	<div id="primary" class="content-area">
 		<main id="main" class="site-main">
 
-		<?php
-		// while ( have_posts() ) :
-		// 	the_post();
-
-		// 	get_template_part( 'template-parts/content', 'page-activities' );
-
-
-		// endwhile; // End of the loop.
-		?>
+			<?php if ( get_edit_post_link() ) : ?>
+			<footer class="entry-footer">
+				<?php
+				edit_post_link(
+					sprintf(
+						wp_kses(
+							/* translators: %s: Name of current post. Only visible to screen readers */
+							__( 'Edit <span class="screen-reader-text">%s</span>', 'cslpres' ),
+							array(
+								'span' => array(
+									'class' => array(),
+								),
+							)
+						),
+						get_the_title()
+					),
+					'<span class="edit-link">',
+					'</span>'
+				);
+				?>
+			</footer>
+		<?php endif; ?>
 
 		</main><!-- #main -->
 	</div><!-- #primary -->
