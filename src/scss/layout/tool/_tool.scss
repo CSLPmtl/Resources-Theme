@@ -1,9 +1,3 @@
-.teacherpage {
-	margin: 4em auto;
-	@include media('>tablet') {
-		max-width: 700px;
-	}
-}
 
 .nav-links {
 	display: flex;
@@ -21,5 +15,132 @@
 		&:hover {
 			box-shadow: 0 0 3px rgba(50, 50, 50, 0.5);
 		}
+	}
+}
+
+// scss-lint:disable all
+.tool-home {
+	.tool-section, section {
+		font-size: 0.8em;
+		.tool-section__inner, .wp-block-columns {
+			padding: 3rem;
+			max-width: 1400px;
+			margin: 2rem auto;
+		}
+	}
+
+	section>p {
+		padding:  1rem 3rem;
+		max-width: 1400px;
+		margin: 0 auto;
+	}
+
+	.tool-home__masthead {
+		display: flex;
+		@include media('<desktop') { &{flex-wrap: wrap;}}
+		padding:  1rem 3rem;
+		max-width: 1400px;
+		margin: 0 auto;
+		margin-bottom: 4rem;
+
+		.blurb {
+			@include media('>tablet') { &{width: 80%;}}
+			flex-grow: 2;
+		}
+		.tool-feature {
+			flex-grow: 1;
+			width: 100%;
+		}
+	}
+}
+.wp-block-column {
+	padding: 0 1rem;
+}
+
+.teacherpage,
+.parentpage,
+.page {
+  padding: .5rem;
+  .entry-title {
+    max-width: 1400px;
+    margin: 2rem auto;
+  }
+  .entry-content,
+  section {
+    font-size: 0.8em;
+    .wp-block-columns, &>* {
+      max-width: 1400px;
+      margin: 2rem auto;
+    }
+  }
+}
+
+// sticky footer
+html, body {
+  // height: 100%; // breaks scrolling nav
+}
+.site {
+	height: 100%;
+  display: flex;
+  flex-direction: column;
+}
+.site-content {
+  flex: 1 0 auto;
+}
+.site-footer {
+  flex-shrink: 0;
+}
+
+// article.page {
+// 	margin: 0 auto;
+// 	max-width: 800px;
+// }
+@include media('>tablet') {
+	#main {
+		margin-top: 6rem;
+	}
+}
+
+#colophon {
+	background: $c__brand-grey;
+	border-top: 3px solid $c__brand-blue_dark;
+	.site-footer__inner {
+		padding: 1em;
+		max-width: 1400px;
+		margin: 1em auto;
+	}
+
+	.menu {
+		width: 100%;
+		box-model: border-box;
+		list-style-type: none;
+		margin: -.4rem 0;
+		padding: 0;
+		display: flex;
+		text-align: center;
+	}
+
+	.menu-item {
+		padding: .4rem;
+		border-radius: 4px;
+		break-inside: avoid;
+		a {
+			display: block;
+			color: $c__brand-charcoal;
+			font-size: 12px;
+			font-family: 'Roboto', sans-serif;
+			font-weight: 700;
+		}
+		&:hover, &:focus {
+			background: rgba(25, 25, 25, 0.08);
+		}
+	}
+
+	.copyright {
+		background: $c__brand-charcoal;
+		color: $c__brand-grey;
+		text-align: center;
+		padding: .7rem;
+		@include font-size(.8);
 	}
 }
