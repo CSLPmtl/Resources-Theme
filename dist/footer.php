@@ -24,6 +24,9 @@
 				?>
 			</div>
 		</div>
+		<div class="copyright">
+			<?= __('Copyright ', 'CSLPRES') . date("Y") . ' | ' . __(' Centre for the Study of Learning Perfomance', 'CSLPRES')  ?>
+		</div>
 	</footer>
 </div>
 

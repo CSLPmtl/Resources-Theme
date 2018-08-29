@@ -1,34 +1,43 @@
 <template>
   <div class="a-meta__container">
-    <div class="meta" v-html="this.thing"></div>
+    <h1 class="a-meta__title" v-html="this.introTitle"></h1>
+    <div class="meta" v-html="this.introText"></div>
+    <div class="a-meta__cat-container">
+      <category
+        v-for="category in catData"
+        :category="category"
+        :key="category.id"
+      />
+    </div>
   </div>
 </template>
 
 <script>
 import axios from 'axios'
-import category from './Category'
+import category from './Categories/Category'
+
+// fetch data set in the html by th epage template
+const { pageID, categories } = window.abraActivities
 
 export default {
   name: 'Categories',
   components: { category },
   created() {
-    this.getthedata()
+    this.fetchIntroText()
   },
   data() {
     return {
-      thing: {},
+      introTitle: '',
+      introText: '',
+      catData: categories,
     }
   },
   methods: {
-    getthething() {
-      axios.get('teacherpage/').then(res => {
-        console.log('res: ', res.data)
-      })
-    },
-    getthedata() {
-      axios.get('teacherpage/134').then(res => { // get url from some object set in the php
-        console.log('res.data: ', res.data)
-        this.thing = res.data.content.rendered
+    fetchIntroText() {
+      // get url from some object set in the php
+      axios.get( `teacherpage/${pageID}` ).then( res => {
+        this.introTitle = res.data.title.rendered
+        this.introText = res.data.content.rendered
       })
     },
   },
@@ -39,5 +48,8 @@ export default {
   .a-meta__container {
     padding: 2rem;
     margin-top: 5rem;
+  }
+  .a-meta__cat-container {
+    display: flex;
   }
 </style>

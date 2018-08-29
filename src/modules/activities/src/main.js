@@ -12,7 +12,7 @@ Vue.config.productionTip = false
 // eslint-disable-next-line
 Vue.http = Vue.prototype.$http = axios;
 // eslint-disable-next-line
-axios.defaults.baseURL = window._bURL
+axios.defaults.baseURL = window.abraActivities.bURL
 
 /* eslint-disable no-new */
 new Vue({

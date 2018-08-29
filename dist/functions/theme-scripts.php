@@ -9,7 +9,7 @@ function cslpres_scripts() {
 	$tdu = get_template_directory_uri() . '/assets/';
 
 	// equeue CSS
-	wp_enqueue_style( 'cslpres-style', $tdu . 'css/style.css' );
+	wp_enqueue_style( 'cslpres-style', $tdu . 'css/style.css', [], CSLPRES_VER );
 
 	// smoothscrolling!
 	wp_enqueue_script(
@@ -27,7 +27,7 @@ function cslpres_scripts() {
 		wp_enqueue_script( 'cslpres-anim', $tdu . 'js/min/animation.min.js', array(), CSLPRES_VER, true );
 	}
 
-	wp_enqueue_script( 'cslpres-menu', $tdu . 'js/min/menu.min.js', array(), CSLPRES_VER, true );
+	wp_enqueue_script( 'cslpres-menu', $tdu . 'js/min/menu.min.js', array(), '333', true );
 
 	if (is_front_page()) {
 		wp_enqueue_script( 'cslpres-home', $tdu . 'js/min/home.min.js', array(), CSLPRES_VER, true );

@@ -32,7 +32,6 @@
 				}
 			} ?>
 		</div>
-
 		<div id="drilldown" data-active="none">
 
 			<div data-type="cat">

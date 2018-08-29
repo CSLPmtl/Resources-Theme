@@ -103,7 +103,7 @@
       container.classList.add('nav-up')
     } else {
       // Scroll Up
-      if (st + window.innerHeight < document.documentElement.offsetHeight ) {
+      if ( (st + window.innerHeight) < document.documentElement.offsetHeight ) {
         container.classList.add('nav-down')
       	container.classList.remove('nav-up')
       }

@@ -8,13 +8,6 @@
  */
 
 ?>
-<div id="stripes" aria-hidden="true">
-	<span></span>
-	<span></span>
-	<span></span>
-	<span></span>
-	<span></span>
-</div>
 <section class="tool-section tool-home__masthead white">
 
 	<div class="tool-blurb">

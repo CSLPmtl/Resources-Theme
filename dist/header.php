@@ -11,7 +11,6 @@
 		<meta name="viewport" content="width=device-width, initial-scale=1">
 		<link href='//fonts.googleapis.com/css?family=Roboto:300,400,700|IBM+Plex+Mono:300|Lato:300' rel='stylesheet' type='text/css' />
 		<script async src="https://www.googletagmanager.com/gtag/js?id=UA-65941254-4"></script>
-		<link href="https://cdn.jsdelivr.net/npm/tailwindcss/dist/tailwind.min.css" rel="stylesheet">
 		<script>
 			window.dnt=navigator.doNotTrack=="yes"||navigator.doNotTrack=="1"||navigator.msDoNotTrack=="1";
 			if (!window.dnt){window.dataLayer = window.dataLayer || [];

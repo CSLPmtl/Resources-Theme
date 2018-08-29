@@ -1,32 +1,17 @@
-// .teacherpage {
-// 	margin: 4em auto;
-// 	@include media('>tablet') {
-// 		max-width: 700px;
-// 	}
-// }
-
-// .nav-links {
-// 	display: flex;
-// 	max-width: 700px;
-// 	margin: 4em auto;
-// 	.nav-previous, .nav-next {
-// 		width: 49%;
-
-// 		box-shadow: 0 0 3px rgba(50, 50, 50, 0.2);
-// 		margin: 1%;
-// 		transition: .4s ease all;
-// 		cursor: pointer;
-// 		border-radius: 4px;
-// 		a { color: black; display: block;		padding: 2em;}
-// 		&:hover {
-// 			box-shadow: 0 0 3px rgba(50, 50, 50, 0.5);
-// 		}
-// 	}
-// }
-
-.parentpage {
-	max-width: 1400px;
-	margin: 0 auto;
-	padding: 1rem;
-	padding-top: 3rem;
+.teacherpage,
+.parentpage,
+.page {
+  padding: .5rem;
+  .entry-title {
+    max-width: 1400px;
+    margin: 2rem auto;
+  }
+  .entry-content,
+  section {
+    font-size: 0.8em;
+    .wp-block-columns, &>* {
+      max-width: 1400px;
+      margin: 2rem auto;
+    }
+  }
 }
