@@ -1,18 +1,16 @@
 import $ from 'balajs'
-import { api as axios, cache } from '../util/config.js'
-import { makeEmbedLink } from '../util/helpers.js'
 
-const activity = {
+module.exports = {
 
 	// Story Functions
-	getRelatedStories: function (query, callback) {
+	getRelatedStories: function (query, callback, axios) {
 		axios.get(query).then(function(res) {
 			callback(res.data)
 		}).catch('error', function (e) {console.warn(e)})
 	},
 
-	showActivity: function (data, state) {
-		state.get('activityData').name = data.title.rendered
+	showStory: function (data, state, axios) {
+		state.activityData.name = data.title.rendered
 
 		$('#activity-title')[0].innerHTML = data.title.rendered
 		$('#activity header span')[0].innerHTML = state.getBreadcrumb()
@@ -41,10 +39,10 @@ const activity = {
 			rescontent.innerHTML = 'This activity currently does not have any additional resources.'
 		}
 
-		$('#activity-video-container')[0].innerHTML = makeEmbedLink(data.activity_video)
+		$('#activity-video-container')[0].innerHTML = this.makeEmbedLink(data.activity_video)
 	},
 
-	makeTabContainer: function () {
+	makeTabContainer() {
 		const tabs = $('.activity__nav.tabs li') // Get all tabs
 
 		tabs.forEach(tab => {
@@ -67,7 +65,7 @@ const activity = {
 		})
 	},
 
-	setActivityIcon: function (query) {
+	setActivityIcon (query, axios) {
 		axios.get('media?parent=' + query).then((res) => {
 			$('#activity-icon')[0].innerHTML = '' // clear old image elems
 			const icon = document.createElement('img')
@@ -79,7 +77,7 @@ const activity = {
 		}).catch('error', e => console.warn(e))
 	},
 
-	setActivityListIcon: function (query, element) {
+	setActivityListIcon (query, axios, element) {
 		axios.get('media?parent=' + query).then((res) => {
 			const icon = document.createElement('img')
 				icon.style.opacity = 0
@@ -91,15 +89,16 @@ const activity = {
 		}).catch('error', e => console.warn(e))
 	},
 
-	getStoriesInCat: function (stories) {
-		let query = 'story?per_page=100&'
-		// let query = 'story?per_page=100&include[]='
+	getStoriesInCat (stories, axios) {
+		// let query = 'story?'
+		let query = 'story?per_page=100&include[]='
 
 		for (let i = stories.length - 1; i >= 0; i--) {
-			query += 'include[]=' + stories[i] + '&'
-			// query += stories[i] + ','
+			// query += 'include[]=' + stories[i] + '&'
+			query += stories[i] + ','
 		}
-		query = query.slice(0, -1) // remove last ampersand or comma
+		query = query.slice(0, -1) // remove last ampersand
+		console.log(query)
 
 		axios.get(query).then( res => {
 			let retval = '<ul>'
@@ -116,7 +115,17 @@ const activity = {
 			+ 'Each link points to additional information and a pdf download to each story'
 			+ retval
 		}).catch('error', e => { console.warn(e) })
+	},
+
+	makeEmbedLink(link) {
+    let regExp = /^.*(youtu.be\/|v\/|u\/\w\/|embed\/|watch\?v=|\&v=)([^#\&\?]*).*/;
+    let match = link.match(regExp);
+
+    if (match && match[2].length != 11) {
+      return 'error';
+    }
+
+		let embed = '<iframe width="560" height="315" src="//www.youtube.com/embed/'
+		return embed + match[2] + '" frameborder="0" allowfullscreen></iframe>'
 	}
 }
-
-export default activity

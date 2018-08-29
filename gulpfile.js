@@ -53,16 +53,18 @@ config.scripts.forEach(script => {
 		return b.bundle()
 		.pipe(source(script.name + '.js'))
 		.pipe(buffer()) // uglify works on buffered streams
-		.pipe(sourcemaps.init({loadMaps: true}))
-			.pipe(gulp.dest('dist/' + config.paths.jsBuild ))
+		// .pipe(sourcemaps.init({loadMaps: true}))
+			.pipe(gulp.dest(config.paths.jsBuild,
+				{ mode: '0777', cwd: process.cwd() + '/theme/' } ))
+			.pipe(gulp.dest('dist/assets/js/')) // pipe to repo
 			.pipe(rename(script.name + '.min.js'))
 			.pipe(buffer())
-			.pipe(uglify().on('error', logError))
+			.pipe(uglify())
 			.on('error', logError)
-		.pipe(sourcemaps.write('/maps'))
+		// .pipe(sourcemaps.write())
 
-		// .pipe(gulp.dest(config.paths.jsBuild + 'min/',
-		// 	{ mode: '0777', cwd: process.cwd() + '/theme/' } ))
+		.pipe(gulp.dest(config.paths.jsBuild + 'min/',
+			{ mode: '0777', cwd: process.cwd() + '/theme/' } ))
 		.pipe(gulp.dest('dist/assets/js/min/'))
 
 		.pipe(browserSync.reload({stream: true}))
@@ -79,8 +81,8 @@ gulp.task( 'css', function (callback) {
 	.on('error', logError)
 	.pipe(autoprefixer(config.tools.autoprefixer))
 	.pipe(sourcemaps.write('./maps'))
-	// .pipe(gulp.dest(config.paths.stylesBuild,
-	// 	{ mode: '0777', cwd: process.cwd() + '/theme/' }))
+	.pipe(gulp.dest(config.paths.stylesBuild,
+		{ mode: '0777', cwd: process.cwd() + '/theme/' }))
 	.pipe(gulp.dest('dist/assets/css'))
 	.pipe(browserSync.reload({stream: true}))
 	.on('end', callback)
