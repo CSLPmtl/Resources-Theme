@@ -1,5 +1,7 @@
 'use strict';
 
+import axios from 'axios'
+
 import story from './util/activity.js'
 import categ from './util/cat.js'
 

@@ -107,7 +107,6 @@ function cslpres_activities_categories () {
 }
 add_action( 'init', 'cslpres_activities_categories' );
 
-
 // Add the activities post type
 function cslpres_activities_post_type () {
 	$labels = array(

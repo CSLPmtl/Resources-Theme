@@ -8,19 +8,3 @@
 @import 'singletons/homepage';
 @import 'singletons/stories';
 @import 'singletons/404';
-
-// sticky footer
-html, body {
-  // height: 100%; // breaks scrolling nav
-}
-.site {
-	height: 100%;
-  display: flex;
-  flex-direction: column;
-}
-.site-content {
-  flex: 1 0 auto;
-}
-.site-footer {
-  flex-shrink: 0;
-}

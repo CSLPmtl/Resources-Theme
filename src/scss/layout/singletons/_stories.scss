@@ -21,10 +21,6 @@
 			grid-row: 2 / span 6;
 			grid-column: 6 / span 6;
 		}}
-
-		@include media('>desktop') { & {
-
-		}}
 	}
 
 	@at-root #{&}__by-cat {
@@ -124,14 +120,6 @@
 
 		}
 		&.selected .theme-card {height: auto;}
-
-		@include media('>tablet') { & {
-
-		}}
-
-		@include media('>desktop') { & {
-
-		}}
 	}
 
 	@at-root #{&}__by-theme, #{&}-page-container {
@@ -206,19 +194,19 @@
 
 
 
-// 	#drilldown #cat-meta__list {
-// 		display: flex;
-// 		flex-wrap: wrap;
-// 		.story {
-// 			cursor: pointer;
-// 			margin: 5px 10px 10px 0;
-// 			width: calc(50% - 20px);
-// 			p {
-// 				display: none;
-// 			}
-// 		}
-// 	}
-// }
+#drilldown #cat-meta__list {
+	display: flex;
+	flex-wrap: wrap;
+	.story {
+		cursor: pointer;
+		margin: 5px 10px 10px 0;
+		width: calc(50% - 20px);
+		p {
+			display: none;
+		}
+	}
+}
+
 
 .abra-stories {
 	max-width: 1500px;

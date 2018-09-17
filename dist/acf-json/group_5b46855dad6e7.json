@@ -66,6 +66,25 @@
                     "max_height": "",
                     "max_size": "",
                     "mime_types": ""
+                },
+                {
+                    "key": "field_5b8eac3ec5533",
+                    "label": "Description",
+                    "name": "activitiespg_description",
+                    "type": "textarea",
+                    "instructions": "optional",
+                    "required": 0,
+                    "conditional_logic": 0,
+                    "wrapper": {
+                        "width": "",
+                        "class": "",
+                        "id": ""
+                    },
+                    "default_value": "",
+                    "placeholder": "defaults to the description set in the category editor",
+                    "maxlength": "",
+                    "rows": "",
+                    "new_lines": ""
                 }
             ]
         }
@@ -75,7 +94,14 @@
             {
                 "param": "post_template",
                 "operator": "==",
-                "value": "page-activities.php"
+                "value": "page-templates\/page-activities.php"
+            }
+        ],
+        [
+            {
+                "param": "post_template",
+                "operator": "==",
+                "value": "page-templates\/page-activities.php"
             }
         ]
     ],
@@ -87,5 +113,5 @@
     "hide_on_screen": "",
     "active": 1,
     "description": "",
-    "modified": 1531348824
+    "modified": 1536077256
 }

@@ -26,7 +26,11 @@ module.exports = {
 		// set meta description
 		$(cm + '__header h2')[0].innerHTML = cat.name
 		$(cm + '__header span')[0].innerHTML = state.getBreadcrumb()
-		$(cm + '__content')[0].innerHTML = cat.description
+		if (window.activitydesc[cat.id]) {
+				$(cm + '__content')[0].innerHTML = window.activitydesc[cat.id]
+		} else {
+			$(cm + '__content')[0].innerHTML = cat.description
+		}
 
 		// set async
 		setTimeout(
@@ -53,7 +57,7 @@ module.exports = {
 					el.addEventListener('click', () => {
 						state.setLevel(2)
 
-						state.pushState(s)
+						// state.pushState(s)
 
 						story.makeTabContainer()
 						story.showStory(s, state, axios)

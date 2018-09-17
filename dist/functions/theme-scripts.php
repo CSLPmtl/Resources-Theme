@@ -53,10 +53,9 @@ function cslpres_scripts() {
 		// 	false,
 		// 	true
 		// );
-
     		// enqueue the Vue app script with localized data.
 		// wp_enqueue_script( 'vue_abra-activities_module' );
-		wp_enqueue_script( 'cslpres-stories', $tdu . 'js/min/activities.min.js', array('axios'), CSLPRES_VER, true );
+		wp_enqueue_script( 'cslpres-stories', $tdu . 'js/min/activities.min.js', [], CSLPRES_VER, true );
 	}
 }
 add_action( 'wp_enqueue_scripts', 'cslpres_scripts' );
