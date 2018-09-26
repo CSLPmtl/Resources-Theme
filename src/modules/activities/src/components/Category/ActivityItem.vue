@@ -52,6 +52,7 @@ export default {
   border: 1px solid #f0f0f0;
   border-radius: 5px;
   margin: 4px;
+  height: 68px;
   &:hover {
     cursor: pointer;
   }
@@ -63,6 +64,8 @@ export default {
   }
   h3 {
     margin-left: 80px;
+    line-height: 30px;
+    font-size: 18px;
   }
 }
 </style>

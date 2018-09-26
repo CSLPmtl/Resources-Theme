@@ -21,7 +21,7 @@ export default {
   name: 'ActivityItem',
   props: ['story'],
   mounted() {
-    console.log( story )
+    console.log( this.story )
   },
   data() {
     return {
