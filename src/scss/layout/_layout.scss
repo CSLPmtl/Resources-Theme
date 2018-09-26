@@ -24,3 +24,26 @@ html, body {
 .site-footer {
   flex-shrink: 0;
 }
+
+.wp-block-column {
+	padding: 0 .5rem;
+}
+
+.content-area {
+  .entry-title {
+    max-width: 1400px;
+    margin: 2rem auto;
+    padding: .5rem;
+  }
+  .entry-content,
+  section {
+    font-size: 0.8em;
+    .wp-block-columns, &>* {
+      max-width: 1400px;
+      margin: 2rem auto;
+    }
+  }
+  .entry-content p {
+    padding: 0 .5rem 1rem .5rem;
+  }
+}
