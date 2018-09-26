@@ -1,0 +1,112 @@
+///
+/// Sets font size and line-height
+/// @param  {float} 	$font-size    the font size, relative the base font size in rem
+/// @param  {any} 		$line-height	defaults to auto
+/// @return {CSS}                   font size and line height declarations
+///
+@mixin font-size($font-size, $line-height: auto) {
+	font-size: ($font-size / $base-font-size) * 1rem;
+
+	@if $line-height == auto {
+		line-height: ceil($font-size / $base-line-height) * ($base-line-height / $font-size);
+	}
+
+	@else {
+		@if (type-of($line-height) == number or $line-height == inherit or $line-height == normal) {
+			line-height: $line-height;
+		}
+
+		@else {
+			@if ($line-height != none and $line-height != false) {
+				@warn "D’oh! ‘#{$line-height}’ is not a valid value for `line-height`.";
+			}
+		}
+	}
+}
+
+///
+/// Adds styled scrollbars!
+/// via css-tricks.com
+/// @param  {css unit}  $size              the size of the scrollbar handle
+/// @param  {css color} $foreground-color  color of the scrollbar handle
+/// @param  {css color} $background-color  defaults to mix($foreground-color, white,  50%)
+/// @return {css}
+///
+@mixin scrollbars($size, $foreground-color, $background-color: mix($foreground-color, white,  50%)) {
+	// For Google Chrome
+	&::-webkit-scrollbar {
+		width: $size;
+		height: $size;
+	}
+	&::-webkit-scrollbar-thumb {
+		background: $foreground-color;
+	}
+	&::-webkit-scrollbar-track {
+		background: $background-color;
+	}
+	// For Internet Explorer
+	body & {
+		scrollbar-face-color: $foreground-color;
+		scrollbar-track-color: $background-color;
+	}
+}
+
+///
+/// Creates rules for viewport-width-responsive type
+/// @param  {css size} $min-vw
+/// @param  {css size} $max-vw
+/// @param  {css size} $min-font-size the minimum size the font will render in
+/// @param  {css size} $max-font-size the maximum size the font will render in
+/// @return {css}
+///
+@mixin fluid-type($min-vw, $max-vw, $min-font-size, $max-font-size) {
+	$u1: unit($min-vw);
+	$u2: unit($max-vw);
+	$u3: unit($min-font-size);
+	$u4: unit($max-font-size);
+
+	@if $u1 == $u2 and $u1 == $u3 and $u1 == $u4 {
+		& {
+			font-size: $min-font-size;
+			@media screen and (min-width: $min-vw) {
+				font-size: calc(
+					#{$min-font-size} + #{strip-unit(
+							$max-font-size - $min-font-size
+					)} * ((100vw - #{$min-vw}) / #{strip-unit($max-vw - $min-vw)})
+				);
+			}
+			@media screen and (min-width: $max-vw) {
+				font-size: $max-font-size;
+			}
+		}
+	}
+}
+
+///
+/// Adjusts postioned elements when wp-adminbar is active
+/// @param  {number} $offset  adjustable offset to the defaults
+/// @return {css}
+///
+@mixin wp-admin-sticky-fix( $offset: 0 ) {
+  $narrow-offset: 46px;
+  $wide-offset: 32px;
+  @if $offset != 0 and type-of($offset) == 'number' {
+    $narrow-offset: $narrow-offset + $offset;
+    $wide-offset: $wide-offset + $offset;
+  }
+  .admin-bar & {
+    top: $narrow-offset;
+    @media screen and (min-width: 783px) {
+      top: $wide-offset;
+    }
+  }
+}
+
+///
+/// Standard font size implementation, no fallbacks to unsupported browsers
+/// @param  {int} $sizeValue
+/// @return {css}
+///
+@mixin font-size($sizeValue: 1) {
+  font-size: $sizeValue * 1rem;
+}

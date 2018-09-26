@@ -1,0 +1,105 @@
+/**
+ * Many styles integrated from normalize.css v8.0.0
+ * MIT License | github.com/necolas/normalize.css
+ *
+ * To reduce CSS size, some rules have been places with their appropriate
+ * selectors in the '04-elements' folder
+ *
+ * - Resets and styles related to text are in generic.text
+ * - Resets and styles related to buttons (but not links)
+ *   are located in generic.interactive
+ * - Resets related to media elements (img, svg, audio.. ) are in general.media
+ */
+
+/**
+ * 1. Remove repeating backgrounds in all browsers (opinionated).
+ * 2. Add box sizing inheritance in all browsers (opinionated).
+ */
+*,
+::before,
+::after,
+*:before,
+*:after  {
+	background-repeat: no-repeat; /* 1 */
+	box-sizing: inherit; /* 2 */
+	text-decoration: inherit;
+	vertical-align: inherit;
+	font-family: inherit;
+	font-size: inherit;
+	font-style: inherit;
+	line-height: inherit;
+}
+
+/**
+ * 1. Add text decoration inheritance in all browsers (opinionated).
+ * 2. Add vertical alignment inheritance in all browsers (opinionated).
+ */
+::before,
+::after {
+	text-decoration: inherit; /* 1 */
+	vertical-align: inherit; /* 2 */
+}
+
+/**
+ * 1. Add border box sizing in all browsers (opinionated).
+ * 2. Add the default cursor in all browsers (opinionated).
+ * 3. Prevent font size adjustments after orientation changes in IE and iOS.
+ * 4. Disable the default highlight color on mobile webkit browsers
+ * 5. Correct the line height in all browsers.
+ */
+html {
+	box-sizing: border-box; /* 1 */
+	cursor: default; /* 2 */
+	-ms-text-size-adjust: 100%; /* 3 */
+	-webkit-text-size-adjust: 100%; /* 3 */
+	-webkit-tap-highlight-color: rgba(0, 0, 0, 0); /* 4 */
+	line-height: 1.15; /* 5 */
+}
+
+/**
+ * 1. Remove the margin in all browsers.
+ * The rest is opinionated
+ */
+body {
+	margin: 0; /* 1 */
+	padding: 0;
+	background: $color__bg-body;
+	flex-direction: column;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	-moz-font-feature-settings: "liga", "kern";
+	text-rendering: optimizeLegibility;
+	font-weight: $font__w-normal;
+	font-feature-settings: "pnum";
+	font-variant-numeric: proportional-nums;
+}
+
+/*
+ * Remove the text shadow on text selections (opinionated).
+ * 1. Restore the coloring undone by defining the text shadow (opinionated).
+ */
+::-moz-selection {
+	background-color: #b3d4fc; /* 1 */
+	color: $black; /* 1 */
+	text-shadow: none;
+}
+
+::selection {
+	background-color: #b3d4fc; /* 1 */
+	color: $black; /* 1 */
+	text-shadow: none;
+}
+
+/**
+ * Add the correct display in IE 10+.
+ */
+template {
+	display: none;
+}
+
+/**
+ * Add the correct display in IE 10.
+ */
+[hidden] {
+	display: none;
+}

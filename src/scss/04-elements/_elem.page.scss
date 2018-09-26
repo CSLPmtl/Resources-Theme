@@ -1,0 +1,5 @@
+html {
+  font-size: 10px; /* 1rem = 10px */
+  line-height: $font__line-height-body / $font__s-base; /* [1] */
+  color: $color__text-main;
+}

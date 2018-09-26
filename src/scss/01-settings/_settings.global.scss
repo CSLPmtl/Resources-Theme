@@ -1,0 +1,58 @@
+$debug: false;
+
+$u: 1rem;
+
+// Usage: "z-index: map-get($z-index, 'nav');"
+// or z(index), z(index, expression)
+$z-index:(
+	'base'   : 0,
+	'one'    : 10,
+	'two'    : 20,
+	'three'  : 30,
+	'nav'    : 30,
+	'four'   : 40,
+	'five'   : 60,
+	'super'  : 70
+);
+
+// Grid Variables
+$breakpoints: (
+	'phone': 			320px,
+	'phablet': 		550px,
+	'tablet': 		768px,
+	'desktop': 		1024px,
+	'ultrawide': 	1400px
+);
+
+@function m($key) {
+	@return map-get($breakpoints, $key)
+}
+
+$grid-breakpoints:
+	xs m('phone')   m('phablet'),
+	sm m('phablet') m('tablet'),
+	md m('tablet')  m('desktop'),
+	lg m('desktop') m('ultrawide') !default;
+
+
+// Media Queries
+$media-expressions: (
+	'screen': 'screen',
+	'print': 'print',
+	'handheld': 'handheld',
+	'landscape': '(orientation: landscape)',
+	'portrait': '(orientation: portrait)',
+	'retina2x': '(-webkit-min-device-pixel-ratio: 2), (min-resolution: 192dpi)',
+	'retina3x': '(-webkit-min-device-pixel-ratio: 3), (min-resolution: 350dpi)'
+) !default;
+
+
+$unit-intervals: (
+	'px': 1,
+	'em': 0.01,
+	'rem': 0.1
+);
+
+$im-media-support: true !default;
+$im-no-media-breakpoint: 'desktop' !default;
+$im-no-media-expressions: ('screen', 'portrait', 'landscape') !default;

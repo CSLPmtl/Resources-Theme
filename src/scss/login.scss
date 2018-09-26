@@ -1,11 +1,12 @@
 
-@import 'variables'; // calls everything within folder
+@import '01-settings/settings.colors'; // calls everything within folder
+@import '01-settings/settings.type';
 
 body.login {
 	// @extend %b-white;
 	// @extend %c-green;
-	background: $c__brand-grey;
-	font-family: $font__main;
+	background: $color__brand-grey;
+	font-family: $font__sans-serif;
 }
 body.login div#login {}
 body.login div#login h1 {}
@@ -25,16 +26,16 @@ body.login div#login form#loginform p.forgetmenot {}
 body.login div#login form#loginform p.forgetmenot input#rememberme {}
 body.login div#login form#loginform p.submit {}
 body.login div#login form#loginform p.submit input#wp-submit {
-	background: lighten($c__background-button, 5%);
-	border-color: lighten($c__background-button, 5%) #{$c__background-button} #{$c__background-button};
-	box-shadow: 0 1px 0 #{$c__background-button};
+	background: lighten($color__bg-button, 5%);
+	border-color: lighten($color__bg-button, 5%) #{$color__bg-button} #{$color__bg-button};
+	box-shadow: 0 1px 0 #{$color__bg-button};
 	color: #fff;
 	text-decoration: none;
 	text-shadow: none;
 }
 
 .login #login_error, .login .message, .login .success {
-	border-color: $c__background-button;
+	border-color: $color__bg-button;
 }
 
 body.login div#login p#nav {}

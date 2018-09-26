@@ -1,0 +1,23 @@
+h1, h2, h3, h4, h5, h6 {
+  margin-top: 0;
+  margin-bottom: 2rem;
+  font-weight: $font__w-bold;
+  font-family: $font__heading;
+}
+
+h1 { @include font-size($font__s-h1); line-height: 1.2;  letter-spacing: -.1rem;  }
+h2 { @include font-size($font__s-h2); line-height: 1.25; letter-spacing: .001rem;  }
+h3 { @include font-size($font__s-h3); line-height: 1.3;  letter-spacing: .0071rem;  }
+h4 { @include font-size($font__s-h4); line-height: 1.35; letter-spacing: .04rem; }
+h5 { @include font-size($font__s-h5); line-height: 1.5;  letter-spacing: -.05rem; }
+h6 { @include font-size($font__s-h6); line-height: 1.6;  letter-spacing: 0;       }
+
+// use @include media();
+@include media('>tablet') {
+  h1 { @include font-size($font__s-h1 * 1.5); }
+  h2 { @include font-size($font__s-h2 * 1.5); }
+  h3 { @include font-size($font__s-h3 * 1.5); }
+  h4 { @include font-size($font__s-h4 * 1.5); }
+  h5 { @include font-size($font__s-h5 * 1.5); }
+  h6 { @include font-size($font__s-h6 * 1.5); }
+}

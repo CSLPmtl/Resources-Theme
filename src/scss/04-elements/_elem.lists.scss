@@ -1,0 +1,11 @@
+ul {
+  list-style: square outside;
+}
+
+li > {
+	ul,
+	ol {
+		margin-left: u(2);
+		margin-bottom: 0;
+	}
+}

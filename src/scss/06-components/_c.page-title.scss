@@ -1,0 +1,18 @@
+.c-page-title {
+	margin-bottom:  u();
+	border-bottom: 1px solid $color__brand-blue;
+}
+
+.c-page-title__main,
+.c-page-title__sub {
+	font-weight: normal;
+	margin-bottom: 0;
+}
+
+.c-page-title__main {
+	@include font-size(4.8);
+}
+
+.c-page-title__sub {
+	@include font-size(3.2);
+}

@@ -1,0 +1,36 @@
+// system font stack defined in
+$font__stack: 'system', sans-serif;
+$font__sans-serif: 'system', sans-serif;
+$font__sans-serif-bold: 'system', sans-serif;
+$font__heading:	'system', sans-serif;
+$font__number: 'system', sans-serif;
+$font__mono: 'Monaco', 'Consolas', 'Andale Mono', 'DejaVu Sans Mono', monospace;
+$font__code: $font__mono;
+$font__pre: $font__mono;
+
+$font__line-height-body: 1.5;
+$font__line-height-pre: 1.6;
+
+$font__mono-bold: 700;
+$font__main-bold: 700;
+
+$font__w-ultra-light: 200;
+$font__w-light: 300;
+$font__w-normal: 400;
+$font__w-medium: 500;
+$font__w-bold: 700;
+$font__w-extra-bold: 900;
+
+$font__s-base: 16;
+$font__s-large: 18;
+$font__s-small: 11;
+
+$font__s-number: 45;
+
+$font__s-h1: 36;
+$font__s-h1-medium: 34;
+$font__s-h2: 24;
+$font__s-h3: 20;
+$font__s-h4: 18;
+$font__s-h5: 14;
+$font__s-h6: 12;

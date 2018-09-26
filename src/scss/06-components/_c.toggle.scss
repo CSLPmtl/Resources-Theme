@@ -1,0 +1,231 @@
+/**
+ * HTML markup for the CSS-only toggle
+ * Via https://codepen.io/personable/pen/stpwD
+	<div class="c-toggle(--wide)">
+		<input id="a" type="checkbox">
+		<label for="a">
+			<div class="c-toggle__switch" data-checked="By Theme" data-unchecked="By Category"></div>
+		</label>
+	</div>
+*/
+
+@mixin toggle-branding (
+	$toggle-off-color: #777,
+	$toggle-on-color: #5fc054,
+	$toggle-inactive-text: rgba(white, 0.5),
+	$toggle-transition: cubic-bezier(0,1,0.5,1)
+) {
+
+	input[type="checkbox"] {
+
+		&[disabled] ~ label {
+			color: rgba($toggle-off-color, 0.5);
+		}
+
+		&:focus ~ label, &:hover ~ label {
+			.toggle__switch {
+				background-color: $toggle-off-color;
+				&:after { color: darken($toggle-off-color, 10%); }
+			}
+		}
+		&:hover ~label { color: darken($toggle-off-color, 5%); }
+		&:checked {
+			~ label {
+				&:hover { color: darken($toggle-on-color, 3%); }
+
+				.toggle__switch {
+					background-color: lighten($toggle-on-color, 5%);
+					&:after { color: darken($toggle-on-color, 5%); }
+				}
+			}
+
+			&:focus, &:hover {
+				~ label {
+					.toggle__switch {
+						background-color: $toggle-on-color;
+						&:after { color: darken($toggle-on-color, 10%); }
+					}
+				}
+			}
+		}
+	}
+
+	label {
+
+		.toggle__label-text { flex: 1; }
+
+		.toggle__switch {
+			transition: background-color 0.3s $toggle-transition;
+			background: lighten($toggle-off-color, 5%);
+			&:before { color: $toggle-inactive-text; }
+			&:after {
+				// Autoprefixer choked here, so making the prefixes explicit
+				-webkit-transition: -webkit-transform 0.3s $toggle-transition;
+				transition: transform 0.3s $toggle-transition;
+				color: $toggle-off-color;
+			}
+		}
+
+	}
+}
+
+@mixin toggle-appearance
+(
+	$toggle-width: 134px,
+	$toggle-height: 36px,
+	$toggle-border-radius: 4px,
+	$toggle-offset: 2px,
+	$toggle-label-font-size: 14px,
+	$toggle-switch-font-size: 12px,
+	$toggle-shadow: 0 3px 3px rgba(black, 0.4),
+	$toggle-has-percents: false
+) {
+	$toggle-switch-width: $toggle-width/2;
+
+	input[type="checkbox"] {
+
+		&:focus ~ label, &:hover ~ label {
+			.toggle__switch {
+				&:after { box-shadow: $toggle-shadow; }
+			}
+		}
+
+		&:checked {
+			~ label {
+				.toggle__switch {
+					&:after {
+						@if $toggle-has-percents {
+							transform: translate3d($toggle-width, 0, 0);
+						} @else {
+							transform: translate3d($toggle-width - ($toggle-switch-width + $toggle-offset),0,0);
+						}
+					}
+				}
+			}
+			&:focus, &:hover {
+				~ label {
+					.toggle__switch { &:after { box-shadow: $toggle-shadow; } }
+				}
+			}
+		}
+	}
+
+	label {
+		font-size: $toggle-label-font-size;
+
+		.toggle__switch {
+			height: $toggle-height;
+			flex: 0 0 $toggle-width;
+			border-radius: $toggle-border-radius;
+
+			&:before {
+				left: $toggle-width/2;
+				font-size: $toggle-switch-font-size;
+				line-height: $toggle-height;
+				width: $toggle-width/2;
+				padding: 0 12px;
+			}
+
+			&:after {
+				top: $toggle-offset; left: $toggle-offset;
+				border-radius: $toggle-border-radius/2;
+				@if $toggle-has-percents {
+					width: calc(#{$toggle-switch-width} - #{$toggle-offset});
+				} @else {
+					width: $toggle-switch-width - $toggle-offset;
+				}
+				line-height: $toggle-height - ($toggle-offset*2);
+				font-size: $toggle-switch-font-size;
+			}
+
+			&:hover {
+				&:after { box-shadow: $toggle-shadow; }
+			}
+		}
+	}
+}
+
+
+.c-toggle {
+	position: relative;
+
+	input[type="checkbox"] {
+		opacity: 0;
+		position: absolute;
+		top: 0; left: 0;
+
+		&[disabled] ~ label {
+			pointer-events: none;
+			.c-toggle__switch { opacity: 0.4; }
+		}
+
+		&:checked {
+			~ label {
+				.c-toggle__switch {
+					&:before {
+						content: attr(data-unchecked);
+						left: 0;
+					}
+					&:after {
+						content: attr(data-checked);
+					}
+				}
+			}
+			&:focus, &:hover {
+				~ label {
+				}
+			}
+		}
+	}
+
+	label {
+		user-select: none;
+		position: relative;
+		display: flex;
+		align-items: center;
+
+		.c-toggle__label-text {
+			flex: 1;
+			padding-left: 32px;
+		}
+
+		.c-toggle__switch {
+			position: relative;
+
+			&:before {
+				content: attr(data-checked);
+				position: absolute;
+				top: 0;
+				text-transform: uppercase;
+				text-align: center;
+			}
+
+			&:after {
+				content: attr(data-unchecked);
+				position: absolute;
+				z-index: 5;
+				text-transform: uppercase;
+				text-align: center;
+				background: white;
+				transform: translate3d(0,0,0);
+			}
+		}
+	}
+
+	// Default values for .toggle class
+	@include toggle-branding($toggle-on-color: $color__brand-blue);
+	@include toggle-appearance;
+
+	&--wide {
+		@include toggle-appearance (
+			100%,  // Toggle width
+			30px,  // Toggle height
+			4px,   // Toggle border radius
+			2px,   // Offset (distance btw switch and box)
+			8px,   // Label font size
+			10px,  // Switch font size
+			0 4px 4px rgba(black, 0.1),
+			true   // uses percents
+    );
+	}
+}
