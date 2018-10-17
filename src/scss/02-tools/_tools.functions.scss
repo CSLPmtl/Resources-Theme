@@ -36,3 +36,11 @@
 @function u( $multiplier: 1 ) {
 	@return $u * $multiplier;
 }
+
+///
+/// Alias for the font-size portion of
+/// @param {}
+///
+@function fs($size) {
+	@return ($size / $font__s-base) * 1rem;
+}
