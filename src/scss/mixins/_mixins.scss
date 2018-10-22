@@ -4,6 +4,8 @@
   font-size: $sizeValue * 1rem;
 }
 
+// Adjusts the calling element to fit the WP admin bar
+// this is useful for fixed elements such as Navigations
 @mixin admin-sticky-fix( $offset: 0 ) {
   $narrow-offset: 46px;
   $wide-offset: 32px;

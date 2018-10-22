@@ -4,7 +4,7 @@ import story from './util/activity.js'
 import categ from './util/cat.js'
 
 const $ = require('zest') // dom selector engine
-const anime = require('animejs')
+const anime = require('animejs') // animation library
 
 // DOM
 const container = $('#activities__by-cat')[0]
@@ -14,6 +14,8 @@ const activity = $('#activity')[0]
 const catMeta = $('#cat-meta')[0]
 
 const ajax = axios.create({ // axios, our AJAX lib
+	// we can pass this ajax instance around to preserve
+	// this setting. This url points to the WP REST API v2 endpoint
 	baseURL: 'https://doe.concordia.ca/cslp/wp-json/wp/v2/'
 })
 

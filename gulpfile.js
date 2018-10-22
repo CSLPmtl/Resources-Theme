@@ -17,6 +17,7 @@
 		browser-sync
 		vinyl-buffer
 		vinyl-source-stream
+
 	Note that this gulpfile uses Gulp 4 syntax
 */
 
@@ -34,7 +35,7 @@ const sourcemaps = require('gulp-sourcemaps')
 const autoprefixer = require('gulp-autoprefixer')
 const browserSync = require('browser-sync').create()
 
-
+// import configuration for browsersync, babelify, autoprefixer et al.
 const config = require('./config.json')
 
 
@@ -108,7 +109,7 @@ gulp.task('watch', () => {
 
 gulp.task( 'default' , gulp.parallel( 'browserSync', 'watch' ))
 
-
+// Quit gulp on gulpfile change
 gulp.watch( 'gulpfile.js' ).on('change', () => process.exit(0) )
 
 
