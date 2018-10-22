@@ -59,3 +59,36 @@ if( function_exists('acf_add_options_page') ) {
 	));
 
 }
+
+function theme_settings ( $request_data ) {
+
+	// setup query argument
+	$args = array( 'post_type' => 'setting' );
+
+	$settings = get_field('site_nav', 'option');
+
+	$result = array();
+	$navs = array();
+
+	if ( $settings ) {
+    while( have_rows('site_nav', 'option') ): the_row();
+      $navs[] = array(
+      	'name' => get_sub_field('site_nav_tool_name', 'option'),
+      	'logo' => get_sub_field('site_nav_tool_logo', 'option'),
+      	'type' => get_sub_field('site_nav_tool_type', 'option'),
+      );
+    endwhile;
+    $result[] = array('navigations' => $navs);
+	}
+
+	return $result;
+}
+
+// register the endpoint
+add_action( 'rest_api_init', function () {
+	register_rest_route( 'theme-settings/v1', '/settings/', array(
+		'methods' => 'GET',
+		'callback' => 'theme_settings',
+		)
+	);
+});
