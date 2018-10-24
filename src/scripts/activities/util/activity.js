@@ -1,5 +1,3 @@
-import $ from 'balajs'
-
 module.exports = {
 
 	// Story Functions
@@ -12,27 +10,27 @@ module.exports = {
 	showStory: function (data, state, axios) {
 		state.activityData.name = data.title.rendered
 
-		$('#activity-title')[0].innerHTML = data.title.rendered
-		$('#activity header span')[0].innerHTML = state.getBreadcrumb()
+		document.getElementById('activity-title').innerHTML = data.title.rendered
+		document.querySelector('#activity header span').innerHTML = state.getBreadcrumb()
 
 		// Overview, tab 1, contains: objective, gfa tips, levels
-		$('#a-desc-c')[0].innerHTML = '<h4>Overview</h4>'
+		document.getElementById('a-desc-c').innerHTML = '<h4>Overview</h4>'
 			+ data.activity_description_activity_objective
-		$('#a-gfa-c')[0].innerHTML = '<h4>Group Facilitation Tips</h4>'
+		document.getElementById('a-gfa-c').innerHTML = '<h4>Group Facilitation Tips</h4>'
 			+ data.activity_description_activity_gfa
-		$('#a-level-c')[0].innerHTML = '<h4>Levels</h4>'
+		document.getElementById('a-level-c').innerHTML = '<h4>Levels</h4>'
 			+ data.activity_description_activity_level
 
 		// Activity Insights
 		// check if has insights, display insights?
-		$('#a-insights-c')[0].innerHTML = '<h4>Activity Insights</h4>'
+		document.getElementById('a-insights-c').innerHTML = '<h4>Activity Insights</h4>'
 			+ data.activity_insights
 
 		// Linked Stories, tab 3
 		this.getStoriesInCat(data.activity_linked_stories, axios)
 
 		// Resources, tab 4
-		let rescontent = $('#a-resources-c')[0]
+		let rescontent = document.getElementById('a-resources-c')[0]
 		if (data.activity_resources != '') {
 			rescontent.innerHTML = '<h4>Resources</h4>' + data.activity_resources
 		} else {
@@ -43,7 +41,7 @@ module.exports = {
 	},
 
 	makeTabContainer() {
-		const tabs = $('.activity__nav.tabs li') // Get all tabs
+		const tabs = document.querySelectorAll('.activity__nav.tabs li') // Get all tabs
 
 		tabs.forEach(tab => {
 			let link = tab.firstChild
@@ -67,13 +65,13 @@ module.exports = {
 
 	setActivityIcon (query, axios) {
 		axios.get('media?parent=' + query).then((res) => {
-			$('#activity-icon')[0].innerHTML = '' // clear old image elems
+			document.getElementById('activity-icon').innerHTML = '' // clear old image elems
 			const icon = document.createElement('img')
 				icon.style.opacity = 0
-				icon.onload = () => { $('#activity-icon img')[0].style.opacity = 1 }
+			icon.onload = () => { document.getElementById('activity-icon img').style.opacity = 1 }
 				icon.src = res.data[0].media_details.sizes.thumbnail.source_url
 				icon.alt = res.data[0].alt_text
-			$('#activity-icon')[0].appendChild(icon)
+			document.getElementById('activity-icon').appendChild(icon)
 		}).catch('error', e => console.warn(e))
 	},
 
@@ -111,7 +109,7 @@ module.exports = {
 			}
 			retval + '</ul>'
 
-			$('#a-related-c')[0].innerHTML =  '<h4>Linked Stories</h4>'
+			document.getElementById('a-related-c').innerHTML =  '<h4>Linked Stories</h4>'
 			+ 'Each link points to additional information and a pdf download to each story'
 			+ retval
 		}).catch('error', e => { console.warn(e) })

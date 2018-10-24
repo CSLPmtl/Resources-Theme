@@ -3,15 +3,14 @@
 import story from './util/activity.js'
 import categ from './util/cat.js'
 
-const $ = require('zest') // dom selector engine
 const anime = require('animejs') // animation library
 
 // DOM
-const container = $('#activities__by-cat')[0]
-const cards = $('.category-card')
-const drilldown = $('#drilldown')[0]
-const activity = $('#activity')[0]
-const catMeta = $('#cat-meta')[0]
+const container = document.getElementById('activities__by-cat')
+const cards = document.querySelector('.category-card')
+const drilldown = document.getElementById('drilldown')
+const activity = document.getElementById('activity')
+const catMeta = document.getElementById('cat-meta')
 
 const ajax = axios.create({ // axios, our AJAX lib
 	// we can pass this ajax instance around to preserve
@@ -143,7 +142,7 @@ const state = {
 	},
 
 	backone: () => state.setLevel(state.drillLevel - 1, {direction: 'reverse'}),
-	hidemeta: () => ('.activity-meta')[0].className = 'stories-meta hidden'
+	hidemeta: () => document.querySelector('.activity-meta').className = 'stories-meta hidden'
 
 }
 
@@ -179,6 +178,6 @@ on('DOMContentLoaded', window, init())
 
 
 function on(event, element, cb, passive) {
-	var el = $(element)[0] || element
+	var el = document.querySelector(element) || element
 	el.addEventListener(event, cb, passive)
 }
