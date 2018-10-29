@@ -121,7 +121,7 @@
                     "label": "CTA text",
                     "name": "th_header_cta_text",
                     "type": "text",
-                    "instructions": "",
+                    "instructions": "Leaving this field blank (or a single space for validation) & leaving the CTA link blank will disable the Call to action button.",
                     "required": 1,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -140,7 +140,7 @@
                     "label": "CTA link",
                     "name": "th_header_cta_link",
                     "type": "url",
-                    "instructions": "This will default to '#scroll', smooth-scrolling the user down by half a page",
+                    "instructions": "This will default scrolling the user down by half a page",
                     "required": 0,
                     "conditional_logic": 0,
                     "wrapper": {
@@ -326,5 +326,5 @@
     ],
     "active": 1,
     "description": "Set content on the homepage of each tool (ABRA, ELM, READS..)",
-    "modified": 1531347893
+    "modified": 1533046694
 }

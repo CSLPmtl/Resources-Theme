@@ -47,6 +47,11 @@ function cslpres_customize_register( $wp_customize ) {
 			'selector'        => '.site-description',
 			'render_callback' => 'cslpres_customize_partial_blogdescription',
 		) );
+		// $wp_customize->selective_refresh->add_partial( 'footerlogo', array(
+		// 	'selector'        => '.footer__clsp-logo img',
+		// 	'settings'				=> 'cslpres_footer_logo_control',
+		// 	'render_callback' => 'cslpres_customize_partial_footerlogo',
+		// ) );
 	}
 }
 add_action( 'customize_register', 'cslpres_customize_register' );
@@ -54,6 +59,10 @@ add_action( 'customize_register', 'cslpres_customize_register' );
 
 function cslpres_customize_partial_blogname() { bloginfo( 'name' ); }
 function cslpres_customize_partial_blogdescription() { bloginfo( 'description' ); }
+
+// function cslpres_customize_partial_footerlogo() {
+// 	return esc_url(get_theme_mod('cslpres_footer_logo'));
+// }
 
 /**
  * Binds JS handlers to make Theme Customizer preview reload changes asynchronously.
