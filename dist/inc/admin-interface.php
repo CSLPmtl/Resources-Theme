@@ -30,7 +30,7 @@ function cslpres_admin_bar_render() {
 // Adds a cute footer to the admin interface
 add_filter('admin_footer_text', 'cslpres_modify_footer_admin');
 function cslpres_modify_footer_admin () {
-	echo 'Developed by <a href="https://michaelhemingway">Michael Hemingway</a> with ❤ for the CLSP in Montreal, Canada.';
+	echo 'Developed by <a href="https://michaelhemingway.com">Michael Hemingway</a> and Jonathan Cardone with ❤ for the CSLP in Montreal, Canada.';
 }
 
 // Rename Tag to Theme, to better match what we use them for
